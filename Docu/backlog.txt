@@ -1,0 +1,28 @@
+
+
+Vistas a generar
+
+	reservations (vistas diseñadas en mockup)
+		index
+			accede via ajax a las siguientes vistas: 
+			reservations/grid
+			reservations/add
+			reservations/edit
+			ŕoom/edit_state
+		grid (seria la pagina del calendario en el mockup esta encerrado por lineas punteadas rojas)
+		view
+		add
+		edit
+
+
+
+	rooms (default baked views)
+		index
+		add
+		edit
+		edit_state
+
+	room_states (default baked views)
+		index
+		add
+		edit

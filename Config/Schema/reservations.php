@@ -42,7 +42,6 @@ class ReservationsSchema extends CakeSchema {
 	public $hotel_rooms = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10, 'key' => 'primary'),
 		'name' => array('type' => 'string', 'null' => true),
-		'price' => array('type' => 'decimal', 'length' => '8,4', 'null' => false, 'default' => 0),
 		'description' => array('type' => 'text', 'null' => true, 'default' => null),
 		'room_state_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
