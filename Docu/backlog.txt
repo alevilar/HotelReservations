@@ -1,4 +1,11 @@
 
+Funcionalidades principales
+
+- Calendario para visualizar y administrar (ABM) reservas. Con scroll en ajax de las fechas.
+- ABM de habitaciones (default baked  views)
+- ABM de estados
+	- Estados posibles de la habitación: libre, limpiando, ocupada. Y modificacion desde la pantalla de reservas.
+
 
 Vistas a generar
 
