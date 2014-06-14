@@ -1,0 +1,45 @@
+ul.dates-range { width: 100%; list-style: none; padding: 0; margin: 0 }
+ul.dates-range li { padding: 0; margin: 0; display: inline-block; width: 4.5%; font-size: 8pt }
+.reservation-item { background-color: red; }
+.days_1 { margin-left: 4.5% !important }
+.days_2 { margin-left: 9% !important }
+.days_3 { margin-left: 13.5% !important }
+.days_4 { margin-left: 19% !important }
+.days_5 { margin-left: 22.5% !important }
+.days_6 { margin-left: 27% !important }
+.days_7 { margin-left: 31.5% !important }
+.days_8 { margin-left: 36% !important }
+.days_9 { margin-left: 40.5% !important }
+.days_10 { margin-left: 45% !important }
+.days_11 { margin-left: 49.5% !important }
+.days_12 { margin-left: 54% !important }
+.days_13 { margin-left: 58.5% !important }
+.days_14 { margin-left: 63% !important }
+.days_15 { margin-left: 67.5% !important }
+.days_16 { margin-left: 72% !important }
+.days_17 { margin-left: 76.5% !important }
+.days_18 { margin-left: 81% !important }
+.days_19 { margin-left: 85.5% !important }
+.days_20 { margin-left: 90% !important }
+
+
+.width_1 { width: 4.5% !important }
+.width_2 { width: 9% !important }
+.width_3 { width: 13.5% !important }
+.width_4 { width: 19% !important }
+.width_5 { width: 22.5% !important }
+.width_6 { width: 27% !important }
+.width_7 { width: 31.5% !important }
+.width_8 { width: 36% !important }
+.width_9 { width: 40.5% !important }
+.width_10 { width: 45% !important }
+.width_11 { width: 49.5% !important }
+.width_12 { width: 54% !important }
+.width_13 { width: 58.5% !important }
+.width_14 { width: 63% !important }
+.width_15 { width: 67.5% !important }
+.width_16 { width: 72% !important }
+.width_17 { width: 76.5% !important }
+.width_18 { width: 81% !important }
+.width_19 { width: 85.5% !important }
+.width_20 { width: 90% !important }

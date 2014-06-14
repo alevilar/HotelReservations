@@ -1,0 +1,717 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"showed_",
+				"showed_width"
+			],
+			[
+				"showed",
+				"showed_width"
+			],
+			[
+				"chec",
+				"checkout"
+			],
+			[
+				"date",
+				"datediff"
+			],
+			[
+				"che",
+				"checkin"
+			],
+			[
+				"star",
+				"start_date"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"strto",
+				"strtotime"
+			],
+			[
+				"getR",
+				"getRangeDates"
+			],
+			[
+				"array",
+				"array"
+			],
+			[
+				"days",
+				"days_left"
+			],
+			[
+				"lis",
+				"listado"
+			],
+			[
+				"cons",
+				"consultar"
+			],
+			[
+				"cliente",
+				"cliente_id"
+			],
+			[
+				"form-",
+				"form-control"
+			],
+			[
+				"arra",
+				"array"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Model/ReservationManagerAppModel.php",
+			"settings":
+			{
+				"buffer_size": 2778,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Controller/ReservationsController.php",
+			"settings":
+			{
+				"buffer_size": 4135,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "View/Reservations/index.ctp",
+			"settings":
+			{
+				"buffer_size": 3799,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "View/Layouts/default.ctp",
+			"settings":
+			{
+				"buffer_size": 1202,
+				"line_ending": "Windows",
+				"name": "<?php echo $this->Html->css('ReservationManager.ma"
+			}
+		},
+		{
+			"file": "webroot/css/main.css",
+			"settings":
+			{
+				"buffer_size": 1772,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/AppServ/www/reservaciones/View/Layouts/default.ctp",
+			"settings":
+			{
+				"buffer_size": 1168,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Config/bootstrap.php",
+			"settings":
+			{
+				"buffer_size": 81,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"tid",
+				"Tidy PHP"
+			],
+			[
+				"tidy",
+				"Tidy PHP"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"svn com",
+				"SVN: Commit…"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/AppServ/www/reservaciones/View/Layouts/ajax.ctp",
+		"/C/AppServ/www/reservaciones/Config/bootstrap.php",
+		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/Config/bootstrap.php",
+		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/Model/Reservation.php",
+		"/C/AppServ/www/reservaciones/Model/Cliente.php",
+		"/C/AppServ/www/reservaciones/Config/database.php",
+		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/Controller/ReservationsController.php",
+		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/Config/routes.php",
+		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/Controller/RoomStatesController.php",
+		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/Model/ReservationManagerAppModel.php",
+		"/C/AppServ/www/reservaciones/webroot/index.php",
+		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/Config/Schema/reservations.php",
+		"/C/AppServ/www/quiniela_admin/trunk/Config/database.php",
+		"/C/AppServ/www/quiniela_admin/trunk/Config/Schema/reservations.php",
+		"/C/AppServ/www/quiniela_admin/trunk/Config/core.php",
+		"/C/AppServ/www/quiniela_admin/trunk/Config/bootstrap.php",
+		"/C/AppServ/www/quiniela_admin/trunk/View/Portal/main.ctp",
+		"/C/AppServ/www/quiniela_admin/trunk/View/Portal/consultar.ctp",
+		"/C/AppServ/www/quiniela_admin/trunk/View/Quinielas/index.ctp",
+		"/C/AppServ/www/quiniela_admin/trunk/View/Portal/listado.ctp",
+		"/C/AppServ/www/quiniela_admin/trunk/webroot/css/main.css",
+		"/C/AppServ/www/quiniela_admin/trunk/View/Partidos/index.ctp",
+		"/C/AppServ/www/quiniela_admin/trunk/Controller/AppController.php",
+		"/C/AppServ/www/quiniela_admin/trunk/Controller/PortalController.php",
+		"/C/AppServ/www/quiniela_admin/trunk/View/Layouts/default.ctp",
+		"/C/AppServ/www/quiniela_admin/trunk/View/Portal/contacto.ctp",
+		"/C/AppServ/www/quiniela_admin/trunk/quinieladb.sql",
+		"/C/AppServ/www/quiniela_admin/trunk/Controller/QuinielasController.php",
+		"/C/AppServ/www/quiniela_admin/trunk/Controller/EquiposController.php",
+		"/C/AppServ/www/quiniela_admin/trunk/Model/Equipo.php",
+		"/C/AppServ/www/quiniela_admin/trunk/index.php",
+		"/C/AppServ/www/quiniela_admin/trunk/webroot/index.php",
+		"/C/AppServ/www/quiniela_admin/quiniela_admin.sublime-project",
+		"/c/users/wuilliam/appdata/local/temp/sublime-svn-1402269188/SVN",
+		"/C/AppServ/www/quiniela_admin/trunk/View/Clientes/edit.ctp",
+		"/C/AppServ/www/quiniela_admin/trunk/View/Clientes/add.ctp",
+		"/C/AppServ/www/quiniela_admin/trunk/View/Quinielas/add.ctp",
+		"/C/AppServ/www/quiniela_admin/trunk/View/Quinielas/edit.ctp",
+		"/C/AppServ/www/quiniela_admin/trunk/View/Partidos/add.ctp",
+		"/C/AppServ/www/quiniela_admin/trunk/View/Partidos/edit.ctp",
+		"/C/AppServ/www/sicoa/trunk/Model/Funcionario.php",
+		"/C/AppServ/www/quiniela_admin/trunk/Model/Cliente.php",
+		"/C/AppServ/www/quiniela_admin/trunk/View/Equipos/edit.ctp",
+		"/C/AppServ/www/sicoa/trunk/Model/Estadocivile.php",
+		"/C/AppServ/www/sicoa/trunk/Model/Divisione.php",
+		"/C/AppServ/www/sicoa/trunk/Model/Coordinacione.php",
+		"/C/AppServ/www/sicoa/trunk/Model/Actividadhistorico.php",
+		"/C/AppServ/www/sicoa/trunk/Model/Actividadasignada.php",
+		"/C/AppServ/www/sicoa/trunk/Model/Actividade.php",
+		"/C/AppServ/www/sicoa/trunk/Model/User.php",
+		"/C/AppServ/www/quiniela_admin/trunk/View/Equipos/add.ctp",
+		"/C/AppServ/www/quiniela_admin/trunk/Config/routes.php",
+		"/C/AppServ/www/sicoa/trunk/Controller/UsersController.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"margin-left: ",
+			".days_",
+			"% }",
+			"width",
+			"getLeftAndRightRangeDates",
+			"root",
+			"`cliente`",
+			"`quiniela`",
+			"`partidosquiniela`",
+			"`partido`",
+			"cliente_id"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"width: ",
+			"witdh: ",
+			".width_",
+			"% !important }",
+			"margin-left",
+			"`Cliente`",
+			"`Quiniela`",
+			"`PartidosQuiniela`",
+			"`Partido`"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Model/ReservationManagerAppModel.php",
+					"settings":
+					{
+						"buffer_size": 2778,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								499,
+								499
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 59.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Controller/ReservationsController.php",
+					"settings":
+					{
+						"buffer_size": 4135,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1598,
+								1598
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 278.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "View/Reservations/index.ctp",
+					"settings":
+					{
+						"buffer_size": 3799,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								674,
+								674
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CakePHP (Native)/CakePHP-Template.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "View/Layouts/default.ctp",
+					"settings":
+					{
+						"buffer_size": 1202,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								610,
+								610
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<?php echo $this->Html->css('ReservationManager.ma",
+							"syntax": "Packages/CakePHP (Native)/CakePHP-Template.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 182.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "webroot/css/main.css",
+					"settings":
+					{
+						"buffer_size": 1772,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1683,
+								1683
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 99.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/AppServ/www/reservaciones/View/Layouts/default.ctp",
+					"settings":
+					{
+						"buffer_size": 1168,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1168
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CakePHP (Native)/CakePHP-Template.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Config/bootstrap.php",
+					"settings":
+					{
+						"buffer_size": 81,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								77,
+								77
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"boot",
+				"Config/bootstrap.php"
+			],
+			[
+				"index",
+				"View/Reservations/index.ctp"
+			],
+			[
+				"resercontr",
+				"Controller/ReservationsController.php"
+			],
+			[
+				"appmode",
+				"Model/ReservationManagerAppModel.php"
+			],
+			[
+				"reserva",
+				"Model/Reservation.php"
+			],
+			[
+				"reser",
+				"Model/Reservation.php"
+			],
+			[
+				"reservatcont",
+				"Controller/ReservationsController.php"
+			],
+			[
+				"appmo",
+				"Model/ReservationManagerAppModel.php"
+			],
+			[
+				"data",
+				"trunk/Config/database.php"
+			],
+			[
+				"core",
+				"trunk/Config/core.php"
+			],
+			[
+				"config",
+				"trunk/Config/bootstrap.php"
+			],
+			[
+				"main.",
+				"trunk/View/Portal/main.ctp"
+			],
+			[
+				"consultar",
+				"trunk/View/Portal/consultar.ctp"
+			],
+			[
+				"quinielasindex",
+				"trunk/View/Quinielas/index.ctp"
+			],
+			[
+				"listado",
+				"trunk/View/Portal/listado.ctp"
+			],
+			[
+				"main",
+				"trunk/webroot/css/main.css"
+			],
+			[
+				"partidosinde",
+				"trunk/View/Partidos/index.ctp"
+			],
+			[
+				"por",
+				"trunk/Controller/PortalController.php"
+			],
+			[
+				"controlle",
+				"trunk/Controller/AppController.php"
+			],
+			[
+				"quiniel",
+				"trunk/quinieladb.sql"
+			],
+			[
+				"contacto",
+				"trunk/View/Portal/contacto.ctp"
+			],
+			[
+				"defa",
+				"trunk/View/Layouts/default.ctp"
+			],
+			[
+				"webrinde",
+				"trunk/webroot/index.php"
+			],
+			[
+				"equipo",
+				"trunk/Model/Equipo.php"
+			],
+			[
+				"partidosedit",
+				"trunk/View/Partidos/edit.ctp"
+			],
+			[
+				"partidosadd",
+				"trunk/View/Partidos/add.ctp"
+			],
+			[
+				"quinielasedit",
+				"trunk/View/Quinielas/edit.ctp"
+			],
+			[
+				"quinielasadd",
+				"trunk/View/Quinielas/add.ctp"
+			],
+			[
+				"clientesadd",
+				"trunk/View/Clientes/add.ctp"
+			],
+			[
+				"quinielad",
+				"trunk/quinieladb.sql"
+			],
+			[
+				"clientesedit",
+				"trunk/View/Clientes/edit.ctp"
+			],
+			[
+				"quinielaadd",
+				"trunk/View/Quinielas/add.ctp"
+			],
+			[
+				"quinielaedit",
+				"trunk/View/Quinielas/edit.ctp"
+			],
+			[
+				"partidosindex",
+				"trunk/View/Partidos/index.ctp"
+			],
+			[
+				"quinielasinde",
+				"trunk/View/Quinielas/index.ctp"
+			],
+			[
+				"clienteedit",
+				"trunk/View/Clientes/edit.ctp"
+			],
+			[
+				"clienteadd",
+				"trunk/View/Clientes/add.ctp"
+			],
+			[
+				"cliente",
+				"trunk/Model/Cliente.php"
+			],
+			[
+				"quinielascontr",
+				"trunk/Controller/QuinielasController.php"
+			],
+			[
+				"equiposadd",
+				"trunk/View/Equipos/add.ctp"
+			],
+			[
+				"equiposedit",
+				"trunk/View/Equipos/edit.ctp"
+			],
+			[
+				"equiposco",
+				"trunk/Controller/EquiposController.php"
+			],
+			[
+				"paridosindex",
+				"trunk/View/Partidos/index.ctp"
+			],
+			[
+				"route",
+				"trunk/Config/routes.php"
+			],
+			[
+				"daa",
+				"trunk/Config/database.php"
+			],
+			[
+				"webind",
+				"trunk/webroot/index.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

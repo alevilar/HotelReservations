@@ -22,8 +22,43 @@ class ReservationsController extends ReservationManagerAppController {
  * @return void
  */
 	public function index() {
+		$this->layout = 'ReservationManager.default';
+
+		// Getting the current date or selected one
+		$date = date('Y-m-d');
+		if (isset($this->request->named['date'])) {
+			$date = $this->request->named['date'];
+		}
+
+		// Get the left date and right date from selected one
+		list($left, $right)  = $this->Reservation->getLeftAndRightRangeDates($date);
+
+		// Get the prev date and next date from selected one
+		list($prev, $next) = $this->Reservation->getPrevAndNextDates($date);
+
+		// Get all dates bewteen range given
+		$dates = $this->Reservation->getRangeDates($left, $right);
+
+		// Getting reservation in range TODO: filter by range
 		$this->Reservation->recursive = 0;
-		$this->set('reservations', $this->Paginator->paginate());
+		$options = array('conditions' => array(
+			'or' => array(
+				array(
+					'Reservation.checkin >=' => $left,
+					'Reservation.checkin <=' => $right
+				),
+				array(
+					'Reservation.checkout >=' => $left,
+					'Reservation.checkout <=' => $right
+				)
+			)
+		));
+		$this->Paginator->settings = $options;
+		$reservations =  $this->Paginator->paginate();
+		foreach ($reservations as &$reservation) {
+			$this->Reservation->setReservationShowedDays(&$reservation, $left, $right);
+		}
+		$this->set(compact('reservations', 'dates', 'prev', 'next'));
 	}
 
 /**
@@ -56,8 +91,9 @@ class ReservationsController extends ReservationManagerAppController {
 				$this->Session->setFlash(__('The reservation could not be saved. Please, try again.'));
 			}
 		}
+		$clientes = $this->Reservation->Cliente->find('list');
 		$rooms = $this->Reservation->Room->find('list');
-		$this->set(compact('rooms'));
+		$this->set(compact('rooms', 'clientes'));
 	}
 
 /**
