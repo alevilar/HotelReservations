@@ -56,7 +56,7 @@ class ReservationsController extends ReservationManagerAppController {
 		$this->Paginator->settings = $options;
 		$reservations =  $this->Paginator->paginate();
 		foreach ($reservations as &$reservation) {
-			$this->Reservation->setReservationShowedDays(&$reservation, $left, $right);
+			$this->Reservation->setReservationShowedDays($reservation, $left, $right);
 		}
 		$this->set(compact('reservations', 'dates', 'prev', 'next'));
 	}
@@ -118,8 +118,9 @@ class ReservationsController extends ReservationManagerAppController {
 			$options = array('conditions' => array('Reservation.' . $this->Reservation->primaryKey => $id));
 			$this->request->data = $this->Reservation->find('first', $options);
 		}
+		$clientes = $this->Reservation->Cliente->find('list');
 		$rooms = $this->Reservation->Room->find('list');
-		$this->set(compact('rooms'));
+		$this->set(compact('rooms', 'clientes'));
 	}
 
 /**

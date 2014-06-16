@@ -1,6 +1,7 @@
 ul.dates-range { width: 100%; list-style: none; padding: 0; margin: 0 }
 ul.dates-range li { padding: 0; margin: 0; display: inline-block; width: 4.5%; font-size: 8pt }
 .reservation-item { background-color: red; }
+ul.block li { display: block }
 .days_1 { margin-left: 4.5% !important }
 .days_2 { margin-left: 9% !important }
 .days_3 { margin-left: 13.5% !important }

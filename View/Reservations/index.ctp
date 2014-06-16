@@ -9,7 +9,7 @@
 	<?php endforeach; ?>
 	<li><?php echo $this->Html->link(__('next'), array('action' => 'index', 'date' => $next)); ?></li>
 </ul>
-<ul class="dates-range">
+<ul class="dates-range block">
 	<?php foreach ($reservations as $reservation): ?>
 		<li class="reservation-item days_<?php echo $reservation['Reservation']['showed_days']; ?> width_<?php echo $reservation['Reservation']['showed_width']; ?>">&nbsp;</li>
 	<?php endforeach; ?>

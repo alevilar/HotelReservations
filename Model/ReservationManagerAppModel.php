@@ -5,7 +5,7 @@ App::uses( 'AppModel', 'Model' );
 class ReservationManagerAppModel extends AppModel {
 	public $tablePrefix = 'hotel_';
 
-	public function setReservationShowedDays($reservation, $left, $right) {
+	public function setReservationShowedDays(&$reservation, $left, $right) {
 		$checkin = strtotime($reservation['Reservation']['checkin']);
 		$checkout = strtotime($reservation['Reservation']['checkout']);
 		$left = strtotime($left);
