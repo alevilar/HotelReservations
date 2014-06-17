@@ -12,11 +12,10 @@ class ReservationManagerAppModel extends AppModel {
 		$right = strtotime($right);
 
 		$datediff = $checkin - $left;
-		echo $showed_days = floor($datediff/(60*60*24)) + 1;
+		$showed_days = floor($datediff/(60*60*24)) + 1;
 		if ($showed_days < 1) {
 			$showed_days = 1;
 		}
-		echo ' ';
 
 		$start_date = $checkin;
 		if ($left > $checkin) {
@@ -31,7 +30,7 @@ class ReservationManagerAppModel extends AppModel {
 		// echo date('Y-m-d', $start_date);
 		// echo " ";
 		// echo date('Y-m-d', $end_date);
-		echo $showed_width = floor( ($end_date - $start_date) /(60*60*24)) + 1;
+		$showed_width = floor( ($end_date - $start_date) /(60*60*24)) + 1;
 		$reservation['Reservation']['showed_days'] = $showed_days;
 		$reservation['Reservation']['showed_width'] = $showed_width;
 		// $reservation['Reservation']['showed_start'] = $datediff;

@@ -1,46 +1,49 @@
-ul.dates-range { width: 100%; list-style: none; padding: 0; margin: 0 }
-ul.dates-range li { padding: 0; margin: 0; display: inline-block; width: 4.5%; font-size: 8pt }
+body, ul {margin: 0;padding:0}
+ul.rooms, ul.dates-range { width: 100%; list-style: none; padding: 0; margin: 0 }
+ul.rooms li { padding: 0; margin: 0; width: 100%; font-size: 8pt }
+ul.dates-range li { padding: 0; margin: 0; position: relative; float: left; width: 5%; font-size: 8pt }
+ul.reservations { width: 95%; display: inline;}
+ul.reservations li { padding: 0; margin: 0; display: inline-block; position:absolute; font-size: 8pt}
 .reservation-item { background-color: red; }
-ul.block li { display: block }
-.days_1 { margin-left: 4.5% !important }
-.days_2 { margin-left: 9% !important }
-.days_3 { margin-left: 13.5% !important }
-.days_4 { margin-left: 19% !important }
-.days_5 { margin-left: 22.5% !important }
-.days_6 { margin-left: 27% !important }
-.days_7 { margin-left: 31.5% !important }
-.days_8 { margin-left: 36% !important }
-.days_9 { margin-left: 40.5% !important }
-.days_10 { margin-left: 45% !important }
-.days_11 { margin-left: 49.5% !important }
-.days_12 { margin-left: 54% !important }
-.days_13 { margin-left: 58.5% !important }
-.days_14 { margin-left: 63% !important }
-.days_15 { margin-left: 67.5% !important }
-.days_16 { margin-left: 72% !important }
-.days_17 { margin-left: 76.5% !important }
-.days_18 { margin-left: 81% !important }
-.days_19 { margin-left: 85.5% !important }
-.days_20 { margin-left: 90% !important }
+.days_1 { left: 5% !important }
+.days_2 { left: 10% !important }
+.days_3 { left: 15% !important }
+.days_4 { left: 20% !important }
+.days_5 { left: 25% !important }
+.days_6 { left: 30% !important }
+.days_7 { left: 35% !important }
+.days_8 { left: 40% !important }
+.days_9 { left: 45% !important }
+.days_10 { left: 50% !important }
+.days_11 { left: 55% !important }
+.days_12 { left: 60% !important }
+.days_13 { left: 65% !important }
+.days_14 { left: 70% !important }
+.days_15 { left: 75% !important }
+.days_16 { left: 80% !important }
+.days_17 { left: 85% !important }
+.days_18 { left: 90% !important }
+.days_19 { left: 95% !important }
+.days_20 { left: 100% !important }
 
 
-.width_1 { width: 4.5% !important }
-.width_2 { width: 9% !important }
-.width_3 { width: 13.5% !important }
-.width_4 { width: 19% !important }
-.width_5 { width: 22.5% !important }
-.width_6 { width: 27% !important }
-.width_7 { width: 31.5% !important }
-.width_8 { width: 36% !important }
-.width_9 { width: 40.5% !important }
-.width_10 { width: 45% !important }
-.width_11 { width: 49.5% !important }
-.width_12 { width: 54% !important }
-.width_13 { width: 58.5% !important }
-.width_14 { width: 63% !important }
-.width_15 { width: 67.5% !important }
-.width_16 { width: 72% !important }
-.width_17 { width: 76.5% !important }
-.width_18 { width: 81% !important }
-.width_19 { width: 85.5% !important }
-.width_20 { width: 90% !important }
+.width_1 { width: 5% !important }
+.width_2 { width: 10% !important }
+.width_3 { width: 15% !important }
+.width_4 { width: 20% !important }
+.width_5 { width: 25% !important }
+.width_6 { width: 30% !important }
+.width_7 { width: 35% !important }
+.width_8 { width: 40% !important }
+.width_9 { width: 45% !important }
+.width_10 { width: 50% !important }
+.width_11 { width: 55% !important }
+.width_12 { width: 60% !important }
+.width_13 { width: 65% !important }
+.width_14 { width: 70% !important }
+.width_15 { width: 75% !important }
+.width_16 { width: 80% !important }
+.width_17 { width: 85% !important }
+.width_18 { width: 90% !important }
+.width_19 { width: 95% !important }
+.width_20 { width: 100% !important }

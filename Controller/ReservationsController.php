@@ -39,26 +39,36 @@ class ReservationsController extends ReservationManagerAppController {
 		// Get all dates bewteen range given
 		$dates = $this->Reservation->getRangeDates($left, $right);
 
-		// Getting reservation in range TODO: filter by range
-		$this->Reservation->recursive = 0;
-		$options = array('conditions' => array(
-			'or' => array(
-				array(
-					'Reservation.checkin >=' => $left,
-					'Reservation.checkin <=' => $right
+		// Getting all rooms
+		$this->Reservation->Room->recursive = 0;
+		$rooms = $this->Reservation->Room->find('all');
+		// print_r($rooms);die;
+		foreach ($rooms as &$room) {
+			// Getting reservation in range TODO: filter by range
+			$this->Reservation->recursive = 0;
+			$options = array('conditions' => array(
+				'or' => array(
+					array(
+						'Reservation.checkin >=' => $left,
+						'Reservation.checkin <=' => $right
+					),
+					array(
+						'Reservation.checkout >=' => $left,
+						'Reservation.checkout <=' => $right
+					)
 				),
-				array(
-					'Reservation.checkout >=' => $left,
-					'Reservation.checkout <=' => $right
-				)
-			)
-		));
-		$this->Paginator->settings = $options;
-		$reservations =  $this->Paginator->paginate();
-		foreach ($reservations as &$reservation) {
-			$this->Reservation->setReservationShowedDays($reservation, $left, $right);
+				'Reservation.room_id' => $room['Room']['id']
+			));
+			$room['Reservation'] = $this->Reservation->find('all', $options);
+		
+			foreach ($room['Reservation'] as &$reservation) {
+				$this->Reservation->setReservationShowedDays($reservation, $left, $right);
+			}
 		}
-		$this->set(compact('reservations', 'dates', 'prev', 'next'));
+
+		// print_r($rooms);die;
+
+		$this->set(compact('rooms', 'dates', 'prev', 'next'));
 	}
 
 /**
