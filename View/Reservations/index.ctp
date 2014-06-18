@@ -1,3 +1,9 @@
+<div class="actions">
+	<h3><?php echo __('Actions'); ?></h3>
+	<ul>
+		<li><?php echo $this->Html->link(__('New Reservation'), array('action' => 'add')); ?></li>
+	</ul>
+</div>
 <ul class="dates-range">
 	<li><?php echo $this->Html->link(__('left'), array('action' => 'index', 'date' => $prev)); ?></li>
 	<?php foreach($dates as $date): ?>
@@ -12,11 +18,11 @@
 <ul class="rooms">
 	<?php foreach ($rooms as $room): ?>
 		<li>
-			<?php echo $room['Room']['name']; ?>
+			<?php echo $this->Html->link($room['Room']['name'] . ' ' . $roomStates[$room['Room']['today_state']], array('controller' => 'rooms', 'action' => 'state', $room['Room']['id'])); ?>
 			<?php if ($room['Reservation']): ?>
 				<ul class="reservations">
 					<?php foreach ($room['Reservation'] as $reservation): ?>
-						<li class="reservation-item days_<?php echo $reservation['Reservation']['showed_days']; ?> width_<?php echo $reservation['Reservation']['showed_width']; ?>">&nbsp;</li>
+						<li class="reservation-item days_<?php echo $reservation['Reservation']['showed_days']; ?> width_<?php echo $reservation['Reservation']['showed_width']; ?>"><?php echo $this->Html->link('&nbsp;', array('action' => 'edit', $reservation['Reservation']['id']), array('escape' => false)); ?></li>
 					<?php endforeach; ?>
 				</ul>
 			<?php endif; ?>
@@ -61,12 +67,4 @@
 		<?php endforeach; ?>
 <?php endforeach; ?>
 	</table>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Reservation'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Rooms'), array('controller' => 'rooms', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Room'), array('controller' => 'rooms', 'action' => 'add')); ?> </li>
-	</ul>
 </div>

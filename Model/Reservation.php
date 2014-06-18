@@ -95,4 +95,28 @@ class Reservation extends ReservationManagerAppModel {
 			'order' => ''
 		),
 	);
+
+/**
+ * getReservationsForRoom get a list of all reservation for a given room
+ *
+ * @param string $room_id
+ * @return array
+ */
+	public function getReservationsForRoom($room_id, $left, $right) {
+		$this->recursive = 0;
+		$options = array('conditions' => array(
+			'or' => array(
+				array(
+					'Reservation.checkin >=' => $left,
+					'Reservation.checkin <=' => $right
+				),
+				array(
+					'Reservation.checkout >=' => $left,
+					'Reservation.checkout <=' => $right
+				)
+			),
+			'Reservation.room_id' => $room_id
+		));
+		return $this->find('all', $options);
+	}
 }

@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"R",
+				"Reservation"
+			],
+			[
+				"roo",
+				"room"
+			],
+			[
 				"showed_",
 				"showed_width"
 			],
@@ -71,6 +79,62 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "Model/ReservationManagerAppModel.php",
+			"settings":
+			{
+				"buffer_size": 2757,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Controller/ReservationsController.php",
+			"settings":
+			{
+				"buffer_size": 4457,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "View/Reservations/index.ctp",
+			"settings":
+			{
+				"buffer_size": 3431,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "webroot/css/main.css",
+			"settings":
+			{
+				"buffer_size": 1943,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "View/Layouts/default.ctp",
+			"settings":
+			{
+				"buffer_size": 843,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Controller/RoomsController.php",
+			"settings":
+			{
+				"buffer_size": 3582,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "View/Rooms/state.ctp",
+			"settings":
+			{
+				"buffer_size": 319,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -195,6 +259,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"margin-",
+			"$this->Paginator->sort(",
 			"setReservationShowedDays",
 			"margin-left: ",
 			".days_",
@@ -214,6 +280,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
 			"width: ",
 			"witdh: ",
 			".width_",
@@ -233,8 +300,197 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Model/ReservationManagerAppModel.php",
+					"settings":
+					{
+						"buffer_size": 2757,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								425,
+								425
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 51.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Controller/ReservationsController.php",
+					"settings":
+					{
+						"buffer_size": 4457,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1120,
+								1120
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 612.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "View/Reservations/index.ctp",
+					"settings":
+					{
+						"buffer_size": 3431,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								683,
+								683
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CakePHP (tmbundle)/Syntaxes/(HTML) CakePHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "webroot/css/main.css",
+					"settings":
+					{
+						"buffer_size": 1943,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								513,
+								513
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "View/Layouts/default.ctp",
+					"settings":
+					{
+						"buffer_size": 843,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								499,
+								499
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CakePHP (tmbundle)/Syntaxes/(HTML) CakePHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 102.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Controller/RoomsController.php",
+					"settings":
+					{
+						"buffer_size": 3582,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2648,
+								2648
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1362.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "View/Rooms/state.ctp",
+					"settings":
+					{
+						"buffer_size": 319,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								305,
+								305
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CakePHP (tmbundle)/Syntaxes/(HTML) CakePHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -279,6 +535,34 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"roomsedit",
+				"View/Rooms/edit.ctp"
+			],
+			[
+				"roomscon",
+				"Controller/RoomsController.php"
+			],
+			[
+				"layde",
+				"View/Layouts/default.ctp"
+			],
+			[
+				"main.css",
+				"webroot/css/main.css"
+			],
+			[
+				"resappmo",
+				"Model/ReservationManagerAppModel.php"
+			],
+			[
+				"reseinde",
+				"View/Reservations/index.ctp"
+			],
+			[
+				"reservacont",
+				"Controller/ReservationsController.php"
+			],
 			[
 				"boot",
 				"Config/bootstrap.php"

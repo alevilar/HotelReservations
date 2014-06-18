@@ -87,6 +87,32 @@ class RoomsController extends ReservationManagerAppController {
 	}
 
 /**
+ * state method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function state($id = null) {
+		if (!$this->Room->exists($id)) {
+			throw new NotFoundException(__('Invalid room'));
+		}
+		if ($this->request->is(array('post', 'put'))) {
+			if ($this->Room->save($this->request->data)) {
+				$this->Session->setFlash(__('The room has been saved.'));
+				return $this->redirect(array('controller' => 'reservations', 'action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The room could not be saved. Please, try again.'));
+			}
+		} else {
+			$options = array('conditions' => array('Room.' . $this->Room->primaryKey => $id));
+			$this->request->data = $this->Room->find('first', $options);
+		}
+		$roomStates = $this->Room->RoomState->find('list');
+		$this->set(compact('roomStates'));
+	}
+
+/**
  * delete method
  *
  * @throws NotFoundException

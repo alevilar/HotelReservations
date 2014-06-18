@@ -4,6 +4,7 @@ ul.rooms li { padding: 0; margin: 0; width: 100%; font-size: 8pt }
 ul.dates-range li { padding: 0; margin: 0; position: relative; float: left; width: 5%; font-size: 8pt }
 ul.reservations { width: 95%; display: inline;}
 ul.reservations li { padding: 0; margin: 0; display: inline-block; position:absolute; font-size: 8pt}
+ul.reservations li a {display: inline-block; width: 100%; text-decoration: none}
 .reservation-item { background-color: red; }
 .days_1 { left: 5% !important }
 .days_2 { left: 10% !important }

@@ -44,22 +44,8 @@ class ReservationsController extends ReservationManagerAppController {
 		$rooms = $this->Reservation->Room->find('all');
 		// print_r($rooms);die;
 		foreach ($rooms as &$room) {
-			// Getting reservation in range TODO: filter by range
-			$this->Reservation->recursive = 0;
-			$options = array('conditions' => array(
-				'or' => array(
-					array(
-						'Reservation.checkin >=' => $left,
-						'Reservation.checkin <=' => $right
-					),
-					array(
-						'Reservation.checkout >=' => $left,
-						'Reservation.checkout <=' => $right
-					)
-				),
-				'Reservation.room_id' => $room['Room']['id']
-			));
-			$room['Reservation'] = $this->Reservation->find('all', $options);
+			$room['Reservation'] = $this->Reservation->getReservationsForRoom($room['Room']['id'], $left, $right);
+			$room['Room']['today_state'] = $this->Reservation->Room->getTodayState($room['Room']['id']);
 		
 			foreach ($room['Reservation'] as &$reservation) {
 				$this->Reservation->setReservationShowedDays($reservation, $left, $right);
@@ -67,8 +53,9 @@ class ReservationsController extends ReservationManagerAppController {
 		}
 
 		// print_r($rooms);die;
+		$roomStates = $this->Reservation->Room->RoomState->find('list');
 
-		$this->set(compact('rooms', 'dates', 'prev', 'next'));
+		$this->set(compact('rooms', 'dates', 'prev', 'next', 'roomStates'));
 	}
 
 /**
