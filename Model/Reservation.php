@@ -97,10 +97,11 @@ class Reservation extends ReservationManagerAppModel {
 	);
 
 /**
- * getReservationsForRoom get a list of all reservation for a given room
- *
- * @param string $room_id
- * @return array
+ * Description
+ * @param type $room_id 
+ * @param type $left 
+ * @param type $right 
+ * @return type
  */
 	public function getReservationsForRoom($room_id, $left, $right) {
 		$this->recursive = 0;
@@ -118,5 +119,31 @@ class Reservation extends ReservationManagerAppModel {
 			'Reservation.room_id' => $room_id
 		));
 		return $this->find('all', $options);
+	}
+
+/**
+ * change the room state if today is between period of reservation for a given room_id or room object
+ * @param int|array $room
+ * @param string $checkin 
+ * @param string $checkout 
+ * @return void
+ */
+	public function changeRoomStateIfTodayInPeriod($room, $checkin, $checkout) {
+		if (!is_array($room) && (is_string($room) || is_int($room))) {
+			$room = $this->Room->findById($room);
+		}
+		$today = date('Y-m-d H:i:s');
+		$options = array('conditions' => array(
+			'Reservation.room_id' => $room['Room']['id'],
+			'or' => array(
+				'Reservation.checkin <=' => $today,
+				'Reservation.checkout >=' => $today,
+			)
+		));
+		$this->recursive = 0;
+		$reservation = $this->find('first', $options);
+		if (!empty($reservation)) {
+			$this->Room->changeRoomState($room, 2); // 2 = Ocupada
+		}
 	}
 }

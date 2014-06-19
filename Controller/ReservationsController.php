@@ -45,17 +45,13 @@ class ReservationsController extends ReservationManagerAppController {
 		// print_r($rooms);die;
 		foreach ($rooms as &$room) {
 			$room['Reservation'] = $this->Reservation->getReservationsForRoom($room['Room']['id'], $left, $right);
-			$room['Room']['today_state'] = $this->Reservation->Room->getTodayState($room['Room']['id']);
 		
 			foreach ($room['Reservation'] as &$reservation) {
 				$this->Reservation->setReservationShowedDays($reservation, $left, $right);
 			}
 		}
 
-		// print_r($rooms);die;
-		$roomStates = $this->Reservation->Room->RoomState->find('list');
-
-		$this->set(compact('rooms', 'dates', 'prev', 'next', 'roomStates'));
+		$this->set(compact('rooms', 'dates', 'prev', 'next'));
 	}
 
 /**
@@ -78,19 +74,25 @@ class ReservationsController extends ReservationManagerAppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($cliente_id = null) {
 		if ($this->request->is('post')) {
 			$this->Reservation->create();
 			if ($this->Reservation->save($this->request->data)) {
+				$this->Reservation->changeRoomStateIfTodayInPeriod(
+					$this->request->data['Reservation']['room_id'],
+					$this->request->data['Reservation']['checkin'],
+					$this->request->data['Reservation']['checkout']);
 				$this->Session->setFlash(__('The reservation has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The reservation could not be saved. Please, try again.'));
 			}
 		}
-		$clientes = $this->Reservation->Cliente->find('list');
+		if ($cliente_id) {
+			$cliente = $this->Reservation->Cliente->findById($cliente_id);
+		}
 		$rooms = $this->Reservation->Room->find('list');
-		$this->set(compact('rooms', 'clientes'));
+		$this->set(compact('cliente_id', 'rooms', 'cliente'));
 	}
 
 /**
@@ -106,6 +108,10 @@ class ReservationsController extends ReservationManagerAppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Reservation->save($this->request->data)) {
+				$this->Reservation->changeRoomStateIfTodayInPeriod(
+					$this->request->data['Reservation']['room_id'],
+					$this->request->data['Reservation']['checkin'],
+					$this->request->data['Reservation']['checkout']);
 				$this->Session->setFlash(__('The reservation has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
@@ -118,6 +124,47 @@ class ReservationsController extends ReservationManagerAppController {
 		$clientes = $this->Reservation->Cliente->find('list');
 		$rooms = $this->Reservation->Room->find('list');
 		$this->set(compact('rooms', 'clientes'));
+	}
+
+/**
+ * edit method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function select_client() {
+		$clientes = $this->Reservation->Cliente->find('all');
+		$this->set(compact('clientes'));
+	}
+
+
+
+
+/**
+ * edit method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function checkout($id = null) {
+		if (!$this->Reservation->exists($id)) {
+			throw new NotFoundException(__('Invalid reservation'));
+		}
+		if ($this->request->is(array('post', 'put'))) {
+			$reservation = $this->Reservation->findById($id);
+			$reservation['Reservation']['checkout'] = date('Y-m-d H:i:s');
+			if ($this->Reservation->save($reservation)) {
+				$reservation['Room']['room_state_id'] = 3; // En limpieza
+				$this->Reservation->Room->save($reservation['Room']);
+				$this->Session->setFlash(__('The reservation has been checked out.'));
+			} else {
+				$this->Session->setFlash(__('The reservation could not be checked out. Please, try again.'));
+			}
+			return $this->redirect(array('action' => 'index'));
+		}
+		$this->redirect(array('action' => 'edit', $id));
 	}
 
 /**

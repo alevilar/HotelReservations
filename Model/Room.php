@@ -71,17 +71,17 @@ class Room extends ReservationManagerAppModel {
 		)
 	);
 
-	public function getTodayState($room_id) {
-		$today = date('Y-m-d H:i:s');
-		$this->recursive = 1;
-		$options = array('conditions' => array(
-			'Reservation.checkin >=' => $today,
-			'Reservation.checkin <=' => $today,
-			'Reservation.room_id' => $room_id
-		));
-		$room = $this->findById($room_id);
-		// TODO: Aqui voy determinando si la habitacion esta ocupada hoy
-		print_r($room);die;
-		// return (isset($reservation['Room']['room_state_id'])) ? $reservation['Room']['room_state_id'] : 1;
+/**
+ * Change room state of a given room object or a given room id
+ * @param integer|array $room 
+ * @param integer $new_room_state_id 
+ * @return boolean
+ */
+	function changeRoomState($room, $new_room_state_id) {
+		if (!is_array($room) && (is_string($room) || is_int($room))) {
+			$room = $this->findById($room);
+		}
+		$room['Room']['room_state_id'] = $new_room_state_id;
+		return $this->save($room);
 	}
 }

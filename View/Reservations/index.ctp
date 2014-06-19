@@ -18,7 +18,7 @@
 <ul class="rooms">
 	<?php foreach ($rooms as $room): ?>
 		<li>
-			<?php echo $this->Html->link($room['Room']['name'] . ' ' . $roomStates[$room['Room']['today_state']], array('controller' => 'rooms', 'action' => 'state', $room['Room']['id'])); ?>
+			<?php echo $this->Html->link($room['Room']['name'] . ' ' . $room['RoomState']['name'], array('controller' => 'rooms', 'action' => 'state', $room['Room']['id'])); ?>
 			<?php if ($room['Reservation']): ?>
 				<ul class="reservations">
 					<?php foreach ($room['Reservation'] as $reservation): ?>
