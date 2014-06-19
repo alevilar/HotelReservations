@@ -7,21 +7,23 @@
  * @since         CakePHP(tm) v 0.10.0.1076
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = __d('cake_dev', 'Reservation Manager Plugin');
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
 		<?php echo $cakeDescription ?>:
 		<?php echo $this->fetch('title'); ?>
 	</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css(array(
-			// 'cake.generic',
+			'ReservationManager.bootstrap.min',
+			'ReservationManager.bootstrap-theme.min',
 			'ReservationManager.main'));
 
 		echo $this->fetch('meta');
@@ -30,12 +32,37 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	?>
 </head>
 <body>
-	<div id="container">
-		<div id="content">
-			<?php echo $this->Session->flash(); ?>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<?php echo $this->Html->link('Reservation Manager', array('controller' => 'reservations', 'action' => 'index'), array('class' => 'navbar-brand')); ?>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><?php echo $this->Html->link(__('New Reservation'), array('controller' => 'reservations', 'action' => 'add')); ?></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+	<div class="container-fluid">
 			<?php echo $this->fetch('content'); ?>
-		</div>
+			<?php echo $this->Session->flash(); ?>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
+	<?php
+		echo $this->Html->script(array(
+			'http://code.jquery.com/jquery-1.11.0.min.js',
+			'ReservationManager.bootstrap.min'
+		));
+	?>
 </body>
 </html>

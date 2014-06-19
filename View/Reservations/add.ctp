@@ -13,7 +13,7 @@
 			echo $this->Html->link('Select client', array('action' => 'select_client'));
 		}
 		echo $this->Form->input('observation');
-		echo $this->Form->input('passengers');
+		echo $this->Form->input('passengers', array('value' => ($cliente_id) ? 1 : ''));
 		echo $this->Form->input('checkin', array('type' => 'text', 'value' => date('Y-m-d H:i:s')));
 		echo $this->Form->input('checkout', array('type' => 'text', 'value' => date('Y-m-d H:i:s')));
 	?>
