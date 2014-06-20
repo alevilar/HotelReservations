@@ -3,5 +3,5 @@ div.rooms div.room { height: 30px; }
 div.dates-range { margin-bottom: 10px }
 div.rooms div.room a.btn,
 div.dates-range a.date { font-size: 8pt; padding: 2px 4px}
-div.rooms div.room a.btn { position: absolute; }
+div.rooms div.room a.btn, .reservation-item { position: absolute; }
 div.reservations div.progress { margin-bottom: 0}
