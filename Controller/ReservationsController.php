@@ -74,7 +74,7 @@ class ReservationsController extends ReservationManagerAppController {
  *
  * @return void
  */
-	public function add($cliente_id = null) {
+	public function add($cliente_id = null, $checkin = null, $room_id = null) {
 		if ($this->request->is('post')) {
 			$this->Reservation->create();
 			if ($this->Reservation->save($this->request->data)) {

@@ -1,11 +1,13 @@
 body, ul {margin: 0;padding:0}
-ul.rooms, ul.dates-range { width: 100%; list-style: none; padding: 0; margin: 0 }
-ul.rooms li { padding: 0; margin: 0; width: 100%; font-size: 8pt }
-ul.dates-range li { padding: 0; margin: 0; position: relative; float: left; width: 5%; font-size: 8pt }
-ul.reservations { width: 95%; display: inline;}
-ul.reservations li { padding: 0; margin: 0; display: inline-block; position:absolute; font-size: 8pt}
-ul.reservations li a {display: inline-block; width: 100%; text-decoration: none}
-.reservation-item { background-color: red; }
+div.rooms, div.dates-range { width: 100%; list-style: none; padding: 0; margin: 0 }
+div.rooms div.room { height: 30px; width: 100%; font-size: 8pt }
+div.dates-range div.date { margin-bottom: 10px; position: relative; float: left; width: 5%; text-align: center; }
+div.rooms div.room a.btn,
+div.dates-range div.date { font-size: 8pt; padding: 2px 4px}
+div.reservations { width: 95%; display: inline;}
+div.reservations div.reservation-item { padding: 0; margin: 0; display: inline-block; position:absolute; font-size: 8pt}
+div.reservations div.reservation-item a {display: inline-block; width: 100%; text-decoration: none}
+.btn-primary a { color: #fff;}
 .days_1 { left: 5% !important }
 .days_2 { left: 10% !important }
 .days_3 { left: 15% !important }
