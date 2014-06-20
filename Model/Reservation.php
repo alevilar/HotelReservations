@@ -132,18 +132,20 @@ class Reservation extends ReservationManagerAppModel {
 		if (!is_array($room) && (is_string($room) || is_int($room))) {
 			$room = $this->Room->findById($room);
 		}
-		$today = date('Y-m-d H:i:s');
+		$today = date('Y-m-d');
 		$options = array('conditions' => array(
 			'Reservation.room_id' => $room['Room']['id'],
-			'or' => array(
-				'Reservation.checkin <=' => $today,
-				'Reservation.checkout >=' => $today,
-			)
+			'Reservation.checkin <=' => $today . ' 23:59:59',
+			'Reservation.checkout >=' => $today . ' 00:00:00',
 		));
 		$this->recursive = 0;
 		$reservation = $this->find('first', $options);
 		if (!empty($reservation)) {
-			$this->Room->changeRoomState($room, 2); // 2 = Ocupada
+			return $this->Room->changeRoomState($room, 2); // 2 = Ocupada
+		} else {
+			if ($room['Room']['room_state_id'] != 4) {
+				return $this->Room->changeRoomState($room, 1);
+			}
 		}
 	}
 }

@@ -1,25 +1,21 @@
 <div class="row">
 	<div class="col-md-12 dates-range btn-group">
-			<div class="date left btn btn-primary"><?php echo $this->Html->link(__('<<'), array('action' => 'index', 'date' => $prev)); ?></div>
-			<?php foreach($dates as $date): ?>
-				<?php if ($date == date('Y-m-d')): ?>
-					<div class="date btn btn-primary"><?php echo $this->Html->link($date, array('action' => 'add', 0, $date)); ?></div>
-				<?php else: ?>
-					<div class="date btn btn-default"><?php echo $this->Html->link($date, array('action' => 'add', 0, $date)); ?></div>
-				<?php endif; ?>
-			<?php endforeach; ?>
-			<div class="date right btn btn-primary"><?php echo $this->Html->link(__('>>'), array('action' => 'index', 'date' => $next)); ?></div>
+		<?php echo $this->Html->link(__('<<'), array('action' => 'index', 'date' => $prev), array('class' => "date left btn btn-primary col-xs-$col_width")); ?>
+		<?php foreach($dates as $date): ?>
+			<?php echo $this->Html->link($date, array('action' => 'add', 0, $date), array('class' => "date btn btn-" . (($date == date('Y-m-d')) ? 'primary' : 'default') . " col-xs-$col_width")); ?>
+		<?php endforeach; ?>
+		<?php echo $this->Html->link(__('>>'), array('action' => 'index', 'date' => $next), array('class' => "date right btn btn-primary col-xs-$col_width")); ?>
 	</div>
 </div>
 <?php foreach ($rooms as $room): ?>	
 	<div class="row">
 		<div class="col-md-12 rooms">
 			<div class="room">
-				<?php echo $this->Html->link($room['Room']['name'], array('controller' => 'rooms', 'action' => 'state', $room['Room']['id']), array('class' => 'btn btn-default width_1 ' . $room['RoomState']['color'])); ?>
+				<?php echo $this->Html->link($room['Room']['name'], array('controller' => 'rooms', 'action' => 'state', $room['Room']['id']), array('class' => "btn btn-default col-xs-$col_width " . $room['RoomState']['color'])); ?>
 				<?php if ($room['Reservation']): ?>
 					<div class="reservations">
 						<?php foreach ($room['Reservation'] as $reservation): ?>
-							<div class="reservation-item days_<?php echo $reservation['Reservation']['showed_days']; ?> width_<?php echo $reservation['Reservation']['showed_width']; ?>">
+							<div class="reservation-item col-xs-offset-<?php echo ($reservation['Reservation']['showed_days']); ?> col-xs-<?php echo $reservation['Reservation']['showed_width']; ?>">
 								<?php echo $this->Html->link('
 									<div class="progress progress-striped active">
 										<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">

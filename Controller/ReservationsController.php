@@ -22,6 +22,7 @@ class ReservationsController extends ReservationManagerAppController {
  * @return void
  */
 	public function index() {
+		$col_width = $this->Reservation->getColWidth();
 		$this->layout = 'ReservationManager.default';
 
 		// Getting the current date or selected one
@@ -51,7 +52,7 @@ class ReservationsController extends ReservationManagerAppController {
 			}
 		}
 
-		$this->set(compact('rooms', 'dates', 'prev', 'next'));
+		$this->set(compact('rooms', 'dates', 'prev', 'next', 'col_width'));
 	}
 
 /**
@@ -92,7 +93,7 @@ class ReservationsController extends ReservationManagerAppController {
 			$cliente = $this->Reservation->Cliente->findById($cliente_id);
 		}
 		$rooms = $this->Reservation->Room->find('list');
-		$this->set(compact('cliente_id', 'rooms', 'cliente'));
+		$this->set(compact('cliente_id', 'checkin', 'rooms', 'cliente'));
 	}
 
 /**

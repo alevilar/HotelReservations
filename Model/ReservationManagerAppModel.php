@@ -5,6 +5,23 @@ App::uses( 'AppModel', 'Model' );
 class ReservationManagerAppModel extends AppModel {
 	public $tablePrefix = 'hotel_';
 
+/**
+ * Description
+ * @return type
+ */
+	public function getColWidth() {
+		return (12 / $this->getTotalCols());
+	}
+
+/**
+ * Description
+ * @return type
+ */
+	public function getTotalCols() {
+		$config = Configure::read('Calendar.ranges');
+		return $config['left'] + $config['right'] + 2;
+	}
+
 	public function setReservationShowedDays(&$reservation, $left, $right) {
 		$checkin = strtotime($reservation['Reservation']['checkin']);
 		$checkout = strtotime($reservation['Reservation']['checkout']);
@@ -27,14 +44,9 @@ class ReservationManagerAppModel extends AppModel {
 			$end_date = $right;
 		}
 
-		// echo date('Y-m-d', $start_date);
-		// echo " ";
-		// echo date('Y-m-d', $end_date);
 		$showed_width = floor( ($end_date - $start_date) /(60*60*24)) + 1;
-		$reservation['Reservation']['showed_days'] = $showed_days;
-		$reservation['Reservation']['showed_width'] = $showed_width;
-		// $reservation['Reservation']['showed_start'] = $datediff;
-		// $reservation['Reservation']['showed_end'] = $datediff;
+		$reservation['Reservation']['showed_days'] = $showed_days * $this->getColWidth();
+		$reservation['Reservation']['showed_width'] = $showed_width * $this->getColWidth();
 	}
 /**
  * Get the prev and next date
@@ -42,7 +54,6 @@ class ReservationManagerAppModel extends AppModel {
  * @return type
  */
 	public function getPrevAndNextDates($date) {
-		$config = Configure::read('Calendar.ranges');
 		$interval = 60 * 60 * 24;
 		return array(date('Y-m-d', strtotime($date) - $interval), date('Y-m-d', strtotime($date) + $interval));
 	}

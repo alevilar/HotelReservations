@@ -6,16 +6,16 @@
 		echo $this->Form->input('room_id');
 		if ($cliente_id) {
 			echo $this->Form->input('cliente_id', array('type' => 'hidden', 'value' => $cliente_id));
-			echo "<label>Cliente</label>:";
-			echo "<strong>" . $cliente['Cliente']['id'] . "</strong>";
+			echo "<label>Cliente</label>: ";
+			echo "<strong>" . $cliente['Cliente']['nombre'] . "</strong> ";
 			echo $this->Html->link('Change client', array('action' => 'select_client'));
 		} else {
 			echo $this->Html->link('Select client', array('action' => 'select_client'));
 		}
 		echo $this->Form->input('observation');
 		echo $this->Form->input('passengers', array('value' => ($cliente_id) ? 1 : ''));
-		echo $this->Form->input('checkin', array('type' => 'text', 'value' => date('Y-m-d H:i:s')));
-		echo $this->Form->input('checkout', array('type' => 'text', 'value' => date('Y-m-d H:i:s')));
+		echo $this->Form->input('checkin', array('type' => 'text', 'value' => ($checkin) ? $checkin . ' ' . date('H:i:s') : date('Y-m-d H:i:s')));
+		echo $this->Form->input('checkout', array('type' => 'text', 'value' => ($checkin) ? $checkin . ' ' . date('H:i:s') : date('Y-m-d H:i:s')));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
