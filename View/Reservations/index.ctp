@@ -1,5 +1,6 @@
+
 <div class="row">
-	<div class="col-md-12 dates-range btn-group">
+	<div class="col-xs-12 dates-range">
 		<?php echo $this->Html->link(__('<<'), array('action' => 'index', 'date' => $prev), array('class' => "date left btn btn-primary col-xs-$col_width")); ?>
 		<?php foreach($dates as $date): ?>
 			<?php echo $this->Html->link($date, array('action' => 'add', 0, $date), array('class' => "date btn btn-" . (($date == date('Y-m-d')) ? 'primary' : 'default') . " col-xs-$col_width")); ?>
@@ -9,25 +10,71 @@
 </div>
 <?php foreach ($rooms as $room): ?>	
 	<div class="row">
-		<div class="col-md-12 rooms">
-			<div class="room">
+		<div class="col-xs-12 dates-range">
+				<?php echo $this->Html->link($room['Room']['name'], array('controller' => 'rooms', 'action' => 'state', $room['Room']['id']), array('class' => "btn btn-default col-xs-$col_width " . $room['RoomState']['color'])); ?>
+				<?php //if ($room['Reservation']): ?>
+						<?php foreach ($dates as $date):  ?>
+							<div class="col-xs-<?php echo $col_width; ?> reservation-item">
+								<?php if (isset($room['ReservationDates'][$date]) && $room['ReservationDates'][$date]): ?>
+										<?php echo $this->Html->link('
+											<button class="btn btn-danger col-xs-12">&nbsp;</button>
+										', array('action' => 'edit', $room['ReservationDates'][$date]), array('class' => 'col-xs-12', 'escape' => false)); ?>
+								<?php else: ?>
+										<?php echo $this->Html->link('
+											<button class="btn btn-default col-xs-12">&nbsp;</button>
+										', array('action' => 'add', 0, $date, $room['Room']['id']), array('class' => 'col-xs-12', 'escape' => false)); ?>
+								<?php endif; ?>
+							</div>
+						<?php endforeach; ?>
+				<?php //endif; ?>
+				<?php echo $this->Html->link($room['Room']['name'], array('controller' => 'rooms', 'action' => 'state', $room['Room']['id']), array('class' => "btn btn-default col-xs-$col_width " . $room['RoomState']['color'])); ?>
+		</div>
+	</div>
+<?php endforeach; ?>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+	<div class="col-xs-12 dates-range">
+		<?php echo $this->Html->link(__('<<'), array('action' => 'index', 'date' => $prev), array('class' => "date left btn btn-primary col-xs-$col_width")); ?>
+		<?php foreach($dates as $date): ?>
+			<?php echo $this->Html->link($date, array('action' => 'add', 0, $date), array('class' => "date btn btn-" . (($date == date('Y-m-d')) ? 'primary' : 'default') . " col-xs-$col_width")); ?>
+		<?php endforeach; ?>
+		<?php echo $this->Html->link(__('>>'), array('action' => 'index', 'date' => $next), array('class' => "date right btn btn-primary col-xs-$col_width")); ?>
+	</div>
+</div>
+<?php foreach ($rooms as $room): ?>	
+	<div class="row">
+		<div class="col-xs-12 dates-range">
 				<?php echo $this->Html->link($room['Room']['name'], array('controller' => 'rooms', 'action' => 'state', $room['Room']['id']), array('class' => "btn btn-default col-xs-$col_width " . $room['RoomState']['color'])); ?>
 				<?php if ($room['Reservation']): ?>
-					<div class="reservations">
 						<?php foreach ($room['Reservation'] as $reservation): ?>
-							<div class="reservation-item col-xs-offset-<?php echo ($reservation['Reservation']['showed_days']); ?> col-xs-<?php echo $reservation['Reservation']['showed_width']; ?>">
+
+							<div class="<?php echo 'reservation-item col-xs-offset-' . $reservation['Reservation']['showed_days'] . ' col-xs-' . $reservation['Reservation']['showed_width']; ?>">
 								<?php echo $this->Html->link('
 									<div class="progress progress-striped active">
 										<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
 											<span class="sr-only">Time ocupied</span>
 										</div>
 									</div>
-								', array('action' => 'edit', $reservation['Reservation']['id']), array('escape' => false)); ?>
+								', array('action' => 'edit', $reservation['Reservation']['id']), array('class' => 'col-xs-12', 'escape' => false)); ?>
 							</div>
 						<?php endforeach; ?>
-					</div>
 				<?php endif; ?>
-			</div>
 		</div>
 	</div>
 <?php endforeach; ?>

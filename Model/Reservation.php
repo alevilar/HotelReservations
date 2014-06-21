@@ -106,19 +106,31 @@ class Reservation extends ReservationManagerAppModel {
 	public function getReservationsForRoom($room_id, $left, $right) {
 		$this->recursive = 0;
 		$options = array('conditions' => array(
-			'or' => array(
-				array(
-					'Reservation.checkin >=' => $left,
-					'Reservation.checkin <=' => $right
-				),
-				array(
-					'Reservation.checkout >=' => $left,
-					'Reservation.checkout <=' => $right
-				)
-			),
+			// 'or' => array(
+				// array(
+					// 'Reservation.checkin >=' => $left . ' 23:59:59',
+					'Reservation.checkin <=' => $right . ' 00:00:00',
+				// ),
+				// array(
+					'Reservation.checkout >=' => $left . ' 23:59:59',
+					// 'Reservation.checkout <=' => $right . ' 00:00:00'
+				// )
+			// ),
 			'Reservation.room_id' => $room_id
 		));
+		// print_r($this->find('all', $options));die;
 		return $this->find('all', $options);
+	}
+
+	public function hasRoomReservationInDate($room, $date) {
+		$options = array('conditions' => array(
+			'Reservation.room_id' => $room['Room']['id'],
+			'Reservation.checkin <=' => $date . ' 23:59:59',
+			'Reservation.checkout >=' => $date . ' 00:00:00',
+		));
+		$this->recursive = 0;
+		$reservation = $this->find('first', $options);
+		return (!empty($reservation)) ? true : false;
 	}
 
 /**
@@ -133,14 +145,7 @@ class Reservation extends ReservationManagerAppModel {
 			$room = $this->Room->findById($room);
 		}
 		$today = date('Y-m-d');
-		$options = array('conditions' => array(
-			'Reservation.room_id' => $room['Room']['id'],
-			'Reservation.checkin <=' => $today . ' 23:59:59',
-			'Reservation.checkout >=' => $today . ' 00:00:00',
-		));
-		$this->recursive = 0;
-		$reservation = $this->find('first', $options);
-		if (!empty($reservation)) {
+		if ($this->hasRoomReservationInDate($room, $today)) {
 			return $this->Room->changeRoomState($room, 2); // 2 = Ocupada
 		} else {
 			if ($room['Room']['room_state_id'] != 4) {

@@ -39,18 +39,25 @@ class ReservationsController extends ReservationManagerAppController {
 
 		// Get all dates bewteen range given
 		$dates = $this->Reservation->getRangeDates($left, $right);
+		// print_r($dates);
 
 		// Getting all rooms
 		$this->Reservation->Room->recursive = 0;
 		$rooms = $this->Reservation->Room->find('all');
 		// print_r($rooms);die;
 		foreach ($rooms as &$room) {
+			$room_reservation_dates = array();
 			$room['Reservation'] = $this->Reservation->getReservationsForRoom($room['Room']['id'], $left, $right);
 		
 			foreach ($room['Reservation'] as &$reservation) {
+				foreach ($dates as $date) {
+					$room_reservation_dates[$date] = ($this->Reservation->hasRoomReservationInDate($room, $date)) ? $reservation['Reservation']['id'] : false;
+				}
+				$room['ReservationDates'] = $room_reservation_dates;
 				$this->Reservation->setReservationShowedDays($reservation, $left, $right);
 			}
 		}
+		// print_r($rooms);
 
 		$this->set(compact('rooms', 'dates', 'prev', 'next', 'col_width'));
 	}
@@ -92,8 +99,12 @@ class ReservationsController extends ReservationManagerAppController {
 		if ($cliente_id) {
 			$cliente = $this->Reservation->Cliente->findById($cliente_id);
 		}
+		if ($room_id) {
+			$room = $this->Reservation->Room->findById($room_id);
+		}
 		$rooms = $this->Reservation->Room->find('list');
-		$this->set(compact('cliente_id', 'checkin', 'rooms', 'cliente'));
+		$clientes = $this->Reservation->Cliente->find('list');
+		$this->set(compact('cliente_id', 'room_id', 'checkin', 'rooms', 'clientes', 'cliente', 'room'));
 	}
 
 /**

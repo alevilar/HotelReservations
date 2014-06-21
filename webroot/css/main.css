@@ -1,7 +1,3 @@
-div.rooms, div.dates-range { width: 100%; }
-div.rooms div.room { height: 30px; }
-div.dates-range { margin-bottom: 10px }
-div.rooms div.room a.btn,
-div.dates-range a.date { font-size: 8pt; padding: 2px 4px}
-div.rooms div.room a.btn, .reservation-item { position: absolute; }
-div.reservations div.progress { margin-bottom: 0}
+.reservation-item, .reservation-item a { padding: 0;}
+/*.reservation-item { position: absolute; }*/
+/*.reservation-item a, .progress { padding-left: 0 }*/

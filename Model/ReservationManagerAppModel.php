@@ -12,6 +12,13 @@ class ReservationManagerAppModel extends AppModel {
 	public function getColWidth() {
 		return (12 / $this->getTotalCols());
 	}
+/**
+ * Description
+ * @return type
+ */
+	public function getReservationColWidth() {
+		return ( 12 / ($this->getTotalCols()) );
+	}
 
 /**
  * Description
@@ -29,9 +36,9 @@ class ReservationManagerAppModel extends AppModel {
 		$right = strtotime($right);
 
 		$datediff = $checkin - $left;
-		$showed_days = floor($datediff/(60*60*24)) + 1;
+		$showed_days = floor($datediff/(60*60*24));
 		if ($showed_days < 1) {
-			$showed_days = 1;
+			$showed_days = 0;
 		}
 
 		$start_date = $checkin;
@@ -43,10 +50,10 @@ class ReservationManagerAppModel extends AppModel {
 		if ($right < $checkout) {
 			$end_date = $right;
 		}
-
+		
 		$showed_width = floor( ($end_date - $start_date) /(60*60*24)) + 1;
-		$reservation['Reservation']['showed_days'] = $showed_days * $this->getColWidth();
-		$reservation['Reservation']['showed_width'] = $showed_width * $this->getColWidth();
+		$reservation['Reservation']['showed_days'] = $showed_days * $this->getReservationColWidth() + $this->getColWidth();
+		$reservation['Reservation']['showed_width'] = ($showed_width * $this->getReservationColWidth());
 	}
 /**
  * Get the prev and next date

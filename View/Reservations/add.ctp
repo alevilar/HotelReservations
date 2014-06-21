@@ -3,14 +3,22 @@
 	<fieldset>
 		<legend><?php echo __('Add Reservation'); ?></legend>
 	<?php
-		echo $this->Form->input('room_id');
+		if ($room_id) {
+			echo $this->Form->input('room_id', array('type' => 'hidden', 'value' => $room_id));
+			echo "<label>Room</label>: ";
+			echo "<strong>" . $room['Room']['name'] . "</strong><br />";
+		} else {
+			echo $this->Form->input('room_id', array('value' => $room_id));
+		}
+
 		if ($cliente_id) {
 			echo $this->Form->input('cliente_id', array('type' => 'hidden', 'value' => $cliente_id));
 			echo "<label>Cliente</label>: ";
-			echo "<strong>" . $cliente['Cliente']['nombre'] . "</strong> ";
+			echo "<strong>" . $cliente['Cliente']['nombre'] . "</strong> <br />";
 			echo $this->Html->link('Change client', array('action' => 'select_client'));
 		} else {
 			echo $this->Html->link('Select client', array('action' => 'select_client'));
+			echo $this->Form->input('cliente_id');
 		}
 		echo $this->Form->input('observation');
 		echo $this->Form->input('passengers', array('value' => ($cliente_id) ? 1 : ''));
