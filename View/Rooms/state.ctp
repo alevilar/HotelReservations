@@ -5,7 +5,7 @@
 
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('room_state_id', array('type' => 'radio'));
+		echo $this->Form->input('room_state_id', array('type' => 'radio', 'legend' => false));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Change state')); ?>

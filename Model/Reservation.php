@@ -133,6 +133,25 @@ class Reservation extends ReservationManagerAppModel {
 		return (!empty($reservation)) ? true : false;
 	}
 
+
+	public function getReservationsForRoomInDate($room, $date) {
+		$reservation_ids = array();
+		$options = array(
+			'conditions' => array(
+				'Reservation.room_id' => $room['Room']['id'],
+				'Reservation.checkin <=' => $date . ' 23:59:59',
+				'Reservation.checkout >=' => $date . ' 00:00:00',
+			),
+			'fields' => array('id')
+		);
+		$this->recursive = 0;
+		$reservations = $this->find('all', $options);
+		if ($reservations) {
+			$reservation_ids = Hash::extract($reservations, '{n}.Reservation.id');
+		}
+		return $reservation_ids;
+	}
+
 /**
  * change the room state if today is between period of reservation for a given room_id or room object
  * @param int|array $room

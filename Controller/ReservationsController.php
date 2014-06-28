@@ -51,7 +51,8 @@ class ReservationsController extends ReservationManagerAppController {
 		
 			foreach ($room['Reservation'] as &$reservation) {
 				foreach ($dates as $date) {
-					$room_reservation_dates[$date] = ($this->Reservation->hasRoomReservationInDate($room, $date)) ? $reservation['Reservation']['id'] : false;
+					// $room_reservation_dates[$date][] = ($this->Reservation->hasRoomReservationInDate($room, $date)) ? $reservation['Reservation']['id'] : false;
+					$room_reservation_dates[$date] = $this->Reservation->getReservationsForRoomInDate($room, $date);
 				}
 				$room['ReservationDates'] = $room_reservation_dates;
 				$this->Reservation->setReservationShowedDays($reservation, $left, $right);
@@ -96,6 +97,7 @@ class ReservationsController extends ReservationManagerAppController {
 				$this->Session->setFlash(__('The reservation could not be saved. Please, try again.'));
 			}
 		}
+		$this->layout = 'ajax';
 		if ($cliente_id) {
 			$cliente = $this->Reservation->Cliente->findById($cliente_id);
 		}
@@ -133,6 +135,7 @@ class ReservationsController extends ReservationManagerAppController {
 			$options = array('conditions' => array('Reservation.' . $this->Reservation->primaryKey => $id));
 			$this->request->data = $this->Reservation->find('first', $options);
 		}
+		$this->layout = 'ajax';
 		$clientes = $this->Reservation->Cliente->find('list');
 		$rooms = $this->Reservation->Room->find('list');
 		$this->set(compact('rooms', 'clientes'));

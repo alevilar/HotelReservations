@@ -108,6 +108,7 @@ class RoomsController extends ReservationManagerAppController {
 			$options = array('conditions' => array('Room.' . $this->Room->primaryKey => $id));
 			$this->request->data = $this->Room->find('first', $options);
 		}
+		$this->layout = 'ajax';
 		$roomStates = $this->Room->RoomState->find('list');
 		$this->set(compact('roomStates'));
 	}

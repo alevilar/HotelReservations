@@ -48,7 +48,7 @@ $cakeDescription = __d('cake_dev', 'Reservation Manager Plugin');
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><?php echo $this->Html->link(__('New Reservation'), array('controller' => 'reservations', 'action' => 'add')); ?></li>
+					<li><?php echo $this->Html->link(__('New Reservation'), array('controller' => 'reservations', 'action' => 'add'), array('data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
@@ -57,11 +57,20 @@ $cakeDescription = __d('cake_dev', 'Reservation Manager Plugin');
 			<?php echo $this->fetch('content'); ?>
 			<?php echo $this->Session->flash(); ?>
 	</div>
+	<!-- Large modal -->
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				...
+			</div>
+		</div>
+	</div>
 	<?php echo $this->element('sql_dump'); ?>
 	<?php
 		echo $this->Html->script(array(
 			'http://code.jquery.com/jquery-1.11.0.min.js',
-			'ReservationManager.bootstrap.min'
+			'ReservationManager.bootstrap.min',
+			'ReservationManager.main'
 		));
 	?>
 </body>
