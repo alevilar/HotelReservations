@@ -1,45 +1,36 @@
+Tareas en proceso
+
+ ??????
 
 
-- reservations/index::: Calendario para visualizar y administrar (ABM) reservas. 
-	el listado tiene un bug, que toma una sola reserva (solo para visualizacion) cuando estan consecutivas
-	hacer Con scroll en ajax de las fechas.
-	ajax y modals
-	- grilla poner fechas en vertical " Mar 
-									     24 
-									    Jun  "
+Tareas Pendientes
 
-   - grilla dias de chekout y checkin hacer que el boton ocupe un col-4 y col-8 de bootstrap									    									    
+- En action reservations/index::: 
+	Agregar modals para: 
+		- Crear nueva reserva
+		- Editar reserva
+		- Modificar estado de la habitacion
 
+	- poner fechas del encabezado de la grilla en vertical mediante CSS  usando la funcion y formato strftime('%a %d %b') Ej: "Mar 24 Jun"
+									     
 
-
-View 
-  reservations/index
-	
-	div.col-md-1
-	  div.rooms		
-	  
-	div.col-md-11
-	  element(reservations_grid)
-	
-
-
-  reservations/grid
-	USA: element(reservations_grid)
-	
-
-
-Element reservations_grid
-	  DAY 2 | DAY 3 | DAY 4 | DAY 5
-	|   X       X   |   -   |   -
-	|   -   |   -   |   -   |   -  
-	|   -   |   X       X   |   -  
-
-	table.table-bordered,table-responsive
-          tr
-	    td.[col-span-1 o col-span-CANT_DE_DIAS_DURACION_RESERVA]
+   - Restructurar grilla para convertirlo en elemento. Mayores detalles en archivo llamado anexo_backlog_14_06_25.txt que esta en esta misma carpeta		
+   			- 1) Crear elemento: reservations_grid.ctp
+   			- 2) Crear vista reservations/grid
+   			- 3) En La vista reservations/index
+   			- 4) Agregar comportamiento ajax a la tabla 
 
 
 
+
+Tareas Resueltas
+
+
+ Funcionalidades::
+- Calendario para visualizar y administrar (ABM) reservas. Con scroll en ajax de las fechas.
+- ABM de habitaciones (default baked  views)
+- ABM de estados
+	- Estados posibles de la habitación: libre, limpiando, ocupada. Y modificacion desde la pantalla de reservas.
 
 
 Vistas a generar
@@ -50,21 +41,12 @@ Vistas a generar
 			reservations/grid
 			reservations/add
 			reservations/edit
-			ŕoom/edit_state
+			room/edit_state
 		grid (seria la pagina del calendario en el mockup esta encerrado por lineas punteadas rojas)
 		view
 		add
 		edit
 
-
-
-
-
-
-Resueltos
-
-- ABM de habitaciones (default baked  views)
-- ABM de estados	
 
 
 	rooms (default baked views)
