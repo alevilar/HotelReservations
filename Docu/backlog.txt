@@ -1,15 +1,41 @@
+Tareas en proceso
 
-Funcionalidades principales
+ ??????
 
+
+Tareas Pendientes
+
+- En action reservations/index::: 
+	Agregar modals para: 
+		- Crear nueva reserva
+		- Editar reserva
+		- Modificar estado de la habitacion
+
+	- poner fechas del encabezado de la grilla en vertical mediante CSS  usando la funcion y formato strftime('%a %d %b') Ej: "Mar 24 Jun"
+									     
+
+   - Restructurar grilla para convertirlo en elemento. Mayores detalles en archivo llamado anexo_backlog_14_06_25.txt que esta en esta misma carpeta		
+   			- 1) Crear elemento: reservations_grid.ctp
+   			- 2) Crear vista reservations/grid
+   			- 3) En La vista reservations/index
+   			- 4) Agregar comportamiento ajax a la tabla 
+
+
+
+
+Tareas Resueltas
+
+
+ Funcionalidades::
 - Calendario para visualizar y administrar (ABM) reservas. Con scroll en ajax de las fechas.
 - ABM de habitaciones (default baked  views)
 - ABM de estados
-	- Estados posibles de la habitación: libre, limpiando, ocupada. Y modificacion desde la pantalla de reservas.
+	- Estados posibles de la habitaciÃ³n: libre, limpiando, ocupada. Y modificacion desde la pantalla de reservas.
 
 
 Vistas a generar
 
-	reservations (vistas diseñadas en mockup)
+	reservations (vistas diseÃ±adas en mockup)
 		index
 			accede via ajax a las siguientes vistas: 
 			reservations/grid

@@ -1,0 +1,37 @@
+
+1) Crear elemento: reservations_grid.ctp
+	EL mismo contiene una tabla con los días y sus reservas para cada habitacion.
+	NO contiene el nombre de la habitacion como columna principal. 
+
+
+
+	La tabla tendria la forma:
+
+	table(class: table-bordered, table-responsive, reservations-grid)
+	  thead
+	    tr (x cada dia)
+	       th Dia X
+	  tbody
+	    tr
+	        td.(class: col-span-1 o col-span-CANT_DE_DIAS_DURACION_RESERVA]
+	            button.btn-danger (solo si tiene reserva)   
+
+
+2) Crear vista reservations/grid
+	que solo usa el elemento reservations_grid.ctp y servirá para los llamados en ajax
+
+
+3) En La vista reservations/index	
+		
+		Hay que reestructurar para que tenga esta forma (te paso en pseudo codigo HTML):
+
+			div.col-md-1
+			  controles dias PREV y NEXT para las fechas de la grilla
+			  div.rooms (listado de habitacion, quizas puede ser otra "table")
+			  
+			div.col-md-11
+			  element(reservations_grid)
+			  ocupa el 100%
+	
+
+3) Agregar comportamiento ajax a la tabla 
