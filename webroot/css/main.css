@@ -1,3 +1,4 @@
 .reservation-item, .reservation-item a { padding: 0 !important;}
 .reservation-item .btn { border-radius: 0}
 .radio label { display: block;}
+.active { font-weight: bold; }
