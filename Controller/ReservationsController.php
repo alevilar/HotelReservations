@@ -22,7 +22,8 @@ class ReservationsController extends ReservationManagerAppController {
  * @return void
  */
 	public function index() {
-		$col_width = $this->Reservation->getColWidth();
+		//$col_width = $this->Reservation->getColWidth();
+		$col_width = 100 % 12;
 		$this->layout = 'ReservationManager.default';
 
 		// Getting the current date or selected one
