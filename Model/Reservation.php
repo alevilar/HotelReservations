@@ -134,7 +134,7 @@ class Reservation extends ReservationManagerAppModel {
 	}
 
 
-	public function getReservationsForRoomInDate($room, $date) {
+	public function getReservationsForRoomInDate($room, $date, $full = false) {
 		$reservation_ids = array();
 		$options = array(
 			'conditions' => array(
@@ -144,12 +144,13 @@ class Reservation extends ReservationManagerAppModel {
 			),
 			'fields' => array('id')
 		);
-		$this->recursive = 0;
+		$this->recursive = -1;
 		$reservations = $this->find('all', $options);
+
 		if ($reservations) {
-			$reservation_ids = Hash::extract($reservations, '{n}.Reservation.id');
+			return array('id' => $reservations[0]['Reservation']['id'], 'days' => $this->getReservationDaysQty($reservations[0]['Reservation']['id']));
 		}
-		return $reservation_ids;
+		return 0;
 	}
 
 /**
@@ -171,5 +172,15 @@ class Reservation extends ReservationManagerAppModel {
 				return $this->Room->changeRoomState($room, 1);
 			}
 		}
+	}
+
+	public function getReservationDaysQty($reservation) {
+		if (!is_array($reservation) && (is_string($reservation) || is_int($reservation))) {
+			$reservation = $this->findById($reservation);
+		}
+		$checkout = strtotime($reservation['Reservation']['checkout']);
+		$checkin = strtotime($reservation['Reservation']['checkin']);
+		$diff = $checkout - $checkin;
+		return ($diff / (24*60*60)) + 1;
 	}
 }

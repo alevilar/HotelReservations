@@ -51,10 +51,24 @@ class ReservationsController extends ReservationManagerAppController {
 			$room['Reservation'] = $this->Reservation->getReservationsForRoom($room['Room']['id'], $left, $right);
 		
 			foreach ($room['Reservation'] as &$reservation) {
+				$last_id = null;
 				foreach ($dates as $date) {
+					// echo $date . ' ' ;
+					// print_r($room['Reservation']);
 					// $room_reservation_dates[$date][] = ($this->Reservation->hasRoomReservationInDate($room, $date)) ? $reservation['Reservation']['id'] : false;
-					$room_reservation_dates[$date] = $this->Reservation->getReservationsForRoomInDate($room, $date);
+					$room_reservation_dates[$date] = null;
+					$aux = $this->Reservation->getReservationsForRoomInDate($room, $date, true);
+					AQUI VOY TRATANDO DE VER QUE LOS DIAS RESERVADOS SE MARQUEN CON UNA BANDERA DE RESERVADOS
+					if ($aux['id'] && ($last_id != $aux['id'])) {
+						$room_reservation_dates[$date] = $aux;
+						$last_id = $room_reservation_dates[$date]['id'];
+						continue;
+					}
+					// print_r($this->Reservation->getReservationsForRoomInDate($room, $date));
 				}
+				print_r($room_reservation_dates);
+				// $reservation['Reservation']['total_days'] = 10;
+				// $reservation['Reservation']['days'] = $this->Reservation->getReservationDaysQty($reservation['Reservation']['id']);
 				$room['ReservationDates'] = $room_reservation_dates;
 				$this->Reservation->setReservationShowedDays($reservation, $left, $right);
 			}
