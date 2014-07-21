@@ -68,7 +68,8 @@ $cakeDescription = __d('cake_dev', 'Reservation Manager Plugin');
 	<?php echo $this->element('sql_dump'); ?>
 	<?php
 		echo $this->Html->script(array(
-			'http://code.jquery.com/jquery-1.11.0.min.js',
+			// 'http://code.jquery.com/jquery-1.11.0.min.js',
+			'ReservationManager.jquery-1.10.2',
 			'ReservationManager.bootstrap.min',
 			'ReservationManager.main'
 		));

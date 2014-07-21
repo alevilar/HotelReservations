@@ -178,8 +178,13 @@ class Reservation extends ReservationManagerAppModel {
 		if (!is_array($reservation) && (is_string($reservation) || is_int($reservation))) {
 			$reservation = $this->findById($reservation);
 		}
+		$today = strtotime('today');
 		$checkout = strtotime($reservation['Reservation']['checkout']);
 		$checkin = strtotime($reservation['Reservation']['checkin']);
+		if ($today > $checkin) {
+			$checkin = $today;
+			AQUI VOY VIENDO QUE LOS DIAS DISPONIBLES SE VEAN BIEN
+		}
 		$diff = $checkout - $checkin;
 		return ($diff / (24*60*60)) + 1;
 	}

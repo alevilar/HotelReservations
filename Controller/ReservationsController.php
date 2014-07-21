@@ -58,13 +58,26 @@ class ReservationsController extends ReservationManagerAppController {
 					// $room_reservation_dates[$date][] = ($this->Reservation->hasRoomReservationInDate($room, $date)) ? $reservation['Reservation']['id'] : false;
 					$room_reservation_dates[$date] = null;
 					$aux = $this->Reservation->getReservationsForRoomInDate($room, $date, true);
-					AQUI VOY TRATANDO DE VER QUE LOS DIAS RESERVADOS SE MARQUEN CON UNA BANDERA DE RESERVADOS
+					// AQUI VOY TRATANDO DE VER QUE LOS DIAS RESERVADOS SE MARQUEN CON UNA BANDERA DE RESERVADOS
 					if ($aux['id'] && ($last_id != $aux['id'])) {
 						$room_reservation_dates[$date] = $aux;
 						$last_id = $room_reservation_dates[$date]['id'];
 						continue;
 					}
 					// print_r($this->Reservation->getReservationsForRoomInDate($room, $date));
+				}
+				// print_r($room_reservation_dates);
+				$counter = 0;
+				foreach ($room_reservation_dates as $k => $v) {
+					if (isset($v['days'])) {
+						$counter = $v['days'];
+						continue;
+					}
+
+					if ($counter > 0) {
+						$room_reservation_dates[$k] = 1;
+						$counter--;
+					}
 				}
 				print_r($room_reservation_dates);
 				// $reservation['Reservation']['total_days'] = 10;
