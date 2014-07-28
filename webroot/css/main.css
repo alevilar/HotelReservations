@@ -1,6 +1,8 @@
-.reservation-item, .reservation-item a { padding: 0;}
+.reservation-item, .reservation-item a { padding: 0; display: inline-block;}
 .reservation-item .btn { text-decoration: none;background-position: 0;transition: none;}
-div.dates-range .btn { border-radius: 0}
+div.dates-range .btn { border-radius: 0;}
+ div.dates-range a, div.dates-range div {position: relative; float: left}
+.reservation-item button, div.dates-range a { margin: 0; padding: 0}
 .radio label { display: block;}
 .no-border-right { border-right: none; }
 .no-border-left { border-left: none; }

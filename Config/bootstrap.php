@@ -1,5 +1,5 @@
 <?php
 Configure::write('Calendar.ranges', array(
-	'left' => 2,
-	'right' => 8
+	'left' => 15,
+	'right' => 15
 ));

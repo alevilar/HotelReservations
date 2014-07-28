@@ -10,14 +10,14 @@ class ReservationManagerAppModel extends AppModel {
  * @return type
  */
 	public function getColWidth() {
-		return (12 / $this->getTotalCols());
+		return (100 / $this->getTotalCols());
 	}
 /**
  * Description
  * @return type
  */
 	public function getReservationColWidth() {
-		return ( 12 / ($this->getTotalCols()) );
+		return ( 100 / ($this->getTotalCols()) );
 	}
 
 /**
