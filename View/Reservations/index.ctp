@@ -18,22 +18,16 @@
 				<?php for ($i = 0; $i < sizeof($dates);  $i++):  ?>
 					<?php $border = ''; ?>
 					<?php if ( isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i - 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i + 1]][0])): ?>
-					a
 							<?php $border = 'no-border-left no-border-right'; ?>
 					<?php elseif ( isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i - 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] != $room['ReservationDates'][$dates[$i + 1]][0])): ?>
-					b
 							<?php $border = 'no-border-left'; ?>
 					<?php elseif ( isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] != $room['ReservationDates'][$dates[$i - 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i + 1]][0])): ?>
-					c
 							<?php $border = 'no-border-right'; ?>
 					<?php elseif ( isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && !isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i - 1]][0])): ?>
-					d
 							<?php $border = 'no-border-left'; ?>
 					<?php elseif ( isset($room['ReservationDates'][$dates[$i]][0]) && !isset($room['ReservationDates'][$dates[$i - 1]][0]) && isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i + 1]][0])): ?>
-					e
 							<?php $border = 'no-border-right'; ?>
 					<?php elseif ( isset($room['ReservationDates'][$dates[$i]][0]) && !isset($room['ReservationDates'][$dates[$i - 1]][0]) && !isset($room['ReservationDates'][$dates[$i + 1]][0])): ?>
-					f
 							<?php $border = ''; ?>
 					<?php endif; ?>
 
