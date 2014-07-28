@@ -1,4 +1,5 @@
 .reservation-item, .reservation-item a { padding: 0;}
+.reservation-item .btn { text-decoration: none;background-position: 0;transition: none;}
 div.dates-range .btn { border-radius: 0}
 .radio label { display: block;}
 .no-border-right { border-right: none; }
