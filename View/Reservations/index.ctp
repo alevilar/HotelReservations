@@ -21,7 +21,7 @@
 								<?php if (sizeof($room['ReservationDates'][$dates[$i - 1]]) != 1): ?>
 									<?php $border = 'no-border-left no-border-right'; ?>
 								<?php endif; ?>
-							<?php elseif ( isset($room['ReservationDates'][$dates[$i]][0]) && !isset($room['ReservationDates'][$dates[$i + 1]])): ?>
+							<?php elseif ( isset($room['ReservationDates'][$dates[$i]][0]) && (isset($dates[$i + 1])) && !isset($room['ReservationDates'][$dates[$i + 1]][0])): ?>
 								<?php $border = 'no-border-left'; ?>
 							<?php else: ?>
 								<?php $border = 'no-border-left no-border-right'; ?>
