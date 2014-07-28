@@ -6,3 +6,4 @@ div.dates-range .btn { border-radius: 0;}
 .radio label { display: block;}
 .no-border-right { border-right: none; }
 .no-border-left { border-left: none; }
+td.active { background-color: red }
