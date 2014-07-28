@@ -4,6 +4,8 @@ div.dates-range .btn { border-radius: 0;}
  div.dates-range a, div.dates-range div {position: relative; float: left}
 .reservation-item button, div.dates-range a { margin: 0; padding: 0}
 .radio label { display: block;}
-.no-border-right { border-right: none; }
-.no-border-left { border-left: none; }
-td.active { background-color: red }
+th.active { background-color: #ccc }
+td.active { background-color: red; border: 1px solid #000; }
+td.active a {text-decoration: none; }
+td.no-border-right { border-right: none; }
+td.no-border-left { border-left: none; }

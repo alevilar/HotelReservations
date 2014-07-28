@@ -4,32 +4,43 @@
 			<tr>
 				<th style="width: <?php echo $col_width; ?>%"><?php echo $this->Html->link(__('<<'), array('action' => 'index', 'date' => $prev), array('class' => "date left")); ?></th>
 				<?php foreach($dates as $date): ?>
-					<th style="width: <?php echo $col_width; ?>%" class="text-center"><small><?php echo $this->Html->link(strftime('%a<br />%d<br />%b', strtotime($date)), array('action' => 'add', 0, $date), array('class' => "date" . (($date == date('Y-m-d')) ? ' active' : ''), 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg', 'escape' => false)); ?></small></th>
+					<th style="width: <?php echo $col_width; ?>%" class="text-center<?php echo (($date == date('Y-m-d')) ? ' active' : ''); ?>"><small><?php echo $this->Html->link(strftime('%a<br />%d<br />%b', strtotime($date)), array('action' => 'add', 0, $date), array('class' => "date", 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg', 'escape' => false)); ?></small></th>
 				<?php endforeach; ?>
 
 				<th style="width: <?php echo $col_width; ?>%"><?php echo $this->Html->link(__('>>'), array('action' => 'index', 'date' => $next), array('class' => "date right")); ?></th>
 			</tr>
 		</thead>
 		<?php foreach ($rooms as $room): ?>	
-			<?php $aux = (isset($room['ReservationDates'][$dates[0]][0])) ? $room['ReservationDates'][$dates[0]][0] : null; ?>
 			<tr>
 				<td style="width: <?php echo $col_width; ?>">
 					<?php echo $this->Html->link($room['Room']['name'], array('controller' => 'rooms', 'action' => 'state', $room['Room']['id']), array('class' => $room['RoomState']['color'], 'style' => 'width:' . $col_width . '%', 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
 				</td>
 				<?php for ($i = 0; $i < sizeof($dates);  $i++):  ?>
-					<?php if ( isset($room['ReservationDates'][$dates[$i]][0]) && ($aux != $room['ReservationDates'][$dates[$i]][0])): ?>
-						<?php $aux = $room['ReservationDates'][$dates[$i]][0]; ?>
-						<?php $border = 'no-border-right'; ?>
-						<?php if (sizeof($room['ReservationDates'][$dates[$i - 1]]) != 1): ?>
+					<?php $border = ''; ?>
+					<?php if ( isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i - 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i + 1]][0])): ?>
+					a
 							<?php $border = 'no-border-left no-border-right'; ?>
-						<?php endif; ?>
-					<?php elseif ( isset($room['ReservationDates'][$dates[$i]][0]) && (isset($dates[$i + 1])) && !isset($room['ReservationDates'][$dates[$i + 1]][0])): ?>
-						<?php $border = 'no-border-left'; ?>
-					<?php else: ?>
-						<?php $border = 'no-border-left no-border-right'; ?>
+					<?php elseif ( isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i - 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] != $room['ReservationDates'][$dates[$i + 1]][0])): ?>
+					b
+							<?php $border = 'no-border-left'; ?>
+					<?php elseif ( isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] != $room['ReservationDates'][$dates[$i - 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i + 1]][0])): ?>
+					c
+							<?php $border = 'no-border-right'; ?>
+					<?php elseif ( isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && !isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i - 1]][0])): ?>
+					d
+							<?php $border = 'no-border-left'; ?>
+					<?php elseif ( isset($room['ReservationDates'][$dates[$i]][0]) && !isset($room['ReservationDates'][$dates[$i - 1]][0]) && isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i + 1]][0])): ?>
+					e
+							<?php $border = 'no-border-right'; ?>
+					<?php elseif ( isset($room['ReservationDates'][$dates[$i]][0]) && !isset($room['ReservationDates'][$dates[$i - 1]][0]) && !isset($room['ReservationDates'][$dates[$i + 1]][0])): ?>
+					f
+							<?php $border = ''; ?>
 					<?php endif; ?>
+
 					<?php if (isset($room['ReservationDates'][$dates[$i]]) && !empty($room['ReservationDates'][$dates[$i]][0])): ?>
-							<td alt="<?php echo $this->Html->url(array('controller' => 'reservations', 'action' => 'edit', $room['ReservationDates'][$dates[$i]][0]), true); ?>" style="width: <?php echo $col_width; ?>%" class="active <?php echo $border; ?>">&nbsp;</td>
+							<td data-toggle="modal" data-target=".bs-example-modal-lg" style="width: <?php echo $col_width; ?>%" class="active <?php echo $border; ?>">
+								<?php echo $this->Html->link('&nbsp;', array('action' => 'edit', $room['ReservationDates'][$dates[$i]][0]), array('data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg', 'escape' => false, 'class' => 'col-xs-12')); ?>
+							</td>
 					<?php else: ?>
 							<td style="width: <?php echo $col_width; ?>%">&nbsp;</td>
 					<?php endif; ?>
