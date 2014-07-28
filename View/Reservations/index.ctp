@@ -41,10 +41,7 @@
 										', array('action' => 'edit', $room['ReservationDates'][$dates[$i]][0]), array('class' => 'col-xs-12', 'escape' => false, 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
 									<?php endif; ?>
 								<?php else: ?>
-										
-										<?php echo $this->Html->link('
-											<span class="col-xs-12">&nbsp;</span>
-										', array('action' => 'add', 0, $dates[$i], $room['Room']['id']), array('class' => 'col-xs-12', 'escape' => false, 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
+										<span class="col-xs-12">&nbsp;</span>
 								<?php endif; ?>
 							</div>
 						<?php endfor; ?>
