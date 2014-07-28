@@ -1,4 +1,4 @@
-
+<?php echo strftime('%a %d %b'); ?>
 <div class="row">
 	<div class="col-xs-12 dates-range">
 		<?php echo $this->Html->link(__('<<'), array('action' => 'index', 'date' => $prev), array('class' => "date left btn btn-primary", 'style' => "width: $col_width%")); ?>
@@ -41,7 +41,9 @@
 										', array('action' => 'edit', $room['ReservationDates'][$dates[$i]][0]), array('class' => 'col-xs-12', 'escape' => false, 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
 									<?php endif; ?>
 								<?php else: ?>
-										<span class="col-xs-12">&nbsp;</span>
+										<?php echo $this->Html->link('
+											<button class="btn btn-default col-xs-12">&nbsp;</button>
+										', array('action' => 'add', 0, $dates[$i], $room['Room']['id']), array('class' => 'col-xs-12', 'escape' => false, 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
 								<?php endif; ?>
 							</div>
 						<?php endfor; ?>
