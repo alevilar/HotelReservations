@@ -57,6 +57,7 @@ class ReservationsController extends ReservationManagerAppController {
 				$room['ReservationDates'] = $room_reservation_dates;
 				$this->Reservation->setReservationShowedDays($reservation, $left, $right);
 			}
+			// print_r($room['ReservationDates']);
 		}
 		// print_r($rooms);
 

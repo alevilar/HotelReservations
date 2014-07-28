@@ -13,28 +13,41 @@
 		<div class="col-xs-12 dates-range">
 				<?php echo $this->Html->link($room['Room']['name'], array('controller' => 'rooms', 'action' => 'state', $room['Room']['id']), array('class' => "btn btn-default col-xs-$col_width " . $room['RoomState']['color'], 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
 				<?php //if ($room['Reservation']): ?>
-						<?php foreach ($dates as $date):  ?>
+					<?php $aux = (isset($room['ReservationDates'][$dates[0]][0])) ? $room['ReservationDates'][$dates[0]][0] : null; ?>
+						<?php for ($i = 0; $i < sizeof($dates);  $i++):  ?>
+							<?php if ( isset($room['ReservationDates'][$dates[$i]][0]) && ($aux != $room['ReservationDates'][$dates[$i]][0])): ?>
+								<?php $aux = $room['ReservationDates'][$dates[$i]][0]; ?>
+								<?php $border = 'no-border-right'; ?>
+								<?php if (sizeof($room['ReservationDates'][$dates[$i - 1]]) != 1): ?>
+									<?php $border = 'no-border-left no-border-right'; ?>
+								<?php endif; ?>
+							<?php elseif ( isset($room['ReservationDates'][$dates[$i]][0]) && !isset($room['ReservationDates'][$dates[$i + 1]][0])): ?>
+								<?php $border = 'no-border-left'; ?>
+							<?php else: ?>
+								<?php $border = 'no-border-left no-border-right'; ?>
+							<?php endif; ?>
 							<div class="col-xs-<?php echo $col_width; ?> reservation-item">
-								<?php if (isset($room['ReservationDates'][$date]) && !empty($room['ReservationDates'][$date][0])): ?>
-									<?php if (sizeof($room['ReservationDates'][$date]) > 1): ?>
+								<?php if (isset($room['ReservationDates'][$dates[$i]]) && !empty($room['ReservationDates'][$dates[$i]][0])): ?>
+									<?php if (sizeof($room['ReservationDates'][$dates[$i]]) > 1): ?>
 										<?php echo $this->Html->link('
-											<button class="btn btn-danger col-xs-12">&nbsp;</button>
-										', array('action' => 'edit', $room['ReservationDates'][$date][0]), array('class' => 'col-xs-6', 'escape' => false, 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
+											<button class="btn btn-danger no-border-left col-xs-12">&nbsp;</button>
+										', array('action' => 'edit', $room['ReservationDates'][$dates[$i]][0]), array('class' => 'col-xs-6', 'escape' => false, 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
 										<?php echo $this->Html->link('
-											<button class="btn btn-danger col-xs-12">&nbsp;</button>
-										', array('action' => 'edit', $room['ReservationDates'][$date][1]), array('class' => 'col-xs-6', 'escape' => false, 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
+											<button class="btn btn-danger no-border-right col-xs-12">&nbsp;</button>
+										', array('action' => 'edit', $room['ReservationDates'][$dates[$i]][1]), array('class' => 'col-xs-6', 'escape' => false, 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
 									<?php else: ?>
 										<?php echo $this->Html->link('
-											<button class="btn btn-danger col-xs-12">&nbsp;</button>
-										', array('action' => 'edit', $room['ReservationDates'][$date][0]), array('class' => 'col-xs-12', 'escape' => false, 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
+											<button class="btn btn-danger col-xs-12 ' . $border . '">&nbsp;</button>
+										', array('action' => 'edit', $room['ReservationDates'][$dates[$i]][0]), array('class' => 'col-xs-12', 'escape' => false, 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
 									<?php endif; ?>
 								<?php else: ?>
+										
 										<?php echo $this->Html->link('
-											<button class="btn btn-default col-xs-12">&nbsp;</button>
-										', array('action' => 'add', 0, $date, $room['Room']['id']), array('class' => 'col-xs-12', 'escape' => false, 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
+											<span class="col-xs-12">&nbsp;</span>
+										', array('action' => 'add', 0, $dates[$i], $room['Room']['id']), array('class' => 'col-xs-12', 'escape' => false, 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
 								<?php endif; ?>
 							</div>
-						<?php endforeach; ?>
+						<?php endfor; ?>
 				<?php //endif; ?>
 				<?php echo $this->Html->link($room['Room']['name'], array('controller' => 'rooms', 'action' => 'state', $room['Room']['id']), array('class' => "btn btn-default col-xs-$col_width " . $room['RoomState']['color'], 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
 		</div>
