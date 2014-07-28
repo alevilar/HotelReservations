@@ -1,9 +1,8 @@
-<?php echo strftime('%a %d %b'); ?>
 <div class="row">
 	<div class="col-xs-12 dates-range">
 		<?php echo $this->Html->link(__('<<'), array('action' => 'index', 'date' => $prev), array('class' => "date left btn btn-primary", 'style' => "width: $col_width%")); ?>
 		<?php foreach($dates as $date): ?>
-			<?php echo $this->Html->link($date, array('action' => 'add', 0, $date), array('class' => "date btn btn-" . (($date == date('Y-m-d')) ? 'primary' : 'default'), 'style' => "width: $col_width%", 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
+			<?php echo $this->Html->link(strftime('%a %d %b', strtotime($date)), array('action' => 'add', 0, $date), array('class' => "date btn btn-" . (($date == date('Y-m-d')) ? 'primary' : 'default'), 'style' => "width: $col_width%", 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
 		<?php endforeach; ?>
 		<?php echo $this->Html->link(__('>>'), array('action' => 'index', 'date' => $next), array('class' => "date right btn btn-primary", 'style' => "width: $col_width%")); ?>
 	</div>
