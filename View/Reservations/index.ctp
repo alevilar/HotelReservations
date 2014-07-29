@@ -16,25 +16,25 @@
 					<?php echo $this->Html->link($room['Room']['name'], array('controller' => 'rooms', 'action' => 'state', $room['Room']['id']), array('class' => $room['RoomState']['color'], 'style' => 'width:' . $col_width . '%', 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
 				</td>
 				<?php for ($i = 0; $i < sizeof($dates);  $i++):  ?>
-					<?php $border = ''; ?>
+					<?php $border = 'checkin checkout'; ?>
 					<?php if ( isset($dates[$i - 1]) &&  isset($dates[$i + 1]) && isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i - 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i + 1]][0])): ?>
 							<?php $border = 'no-border-left no-border-right'; ?>
 					<?php elseif ( isset($dates[$i - 1]) &&  isset($dates[$i + 1]) && isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i - 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] != $room['ReservationDates'][$dates[$i + 1]][0])): ?>
-							<?php $border = 'no-border-left'; ?>
+							<?php $border = 'no-border-left checkout'; ?>
 					<?php elseif ( isset($dates[$i - 1]) &&  isset($dates[$i + 1]) && isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] != $room['ReservationDates'][$dates[$i - 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i + 1]][0])): ?>
-							<?php $border = 'no-border-right'; ?>
+							<?php $border = 'no-border-right checkin'; ?>
 					<?php elseif ( isset($dates[$i - 1]) &&  isset($dates[$i + 1]) && isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && !isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i - 1]][0])): ?>
-							<?php $border = 'no-border-left'; ?>
+							<?php $border = 'no-border-left checkout'; ?>
 					<?php elseif ( isset($dates[$i - 1]) &&  isset($dates[$i + 1]) && isset($room['ReservationDates'][$dates[$i]][0]) && !isset($room['ReservationDates'][$dates[$i - 1]][0]) && isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i + 1]][0])): ?>
-							<?php $border = 'no-border-right'; ?>
+							<?php $border = 'no-border-right checkin'; ?>
 					<?php elseif ( isset($dates[$i - 1]) &&  isset($dates[$i + 1]) && isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && !isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i + 1]][0])): ?>
-							<?php $border = 'no-border-left'; ?>
+							<?php $border = 'no-border-left checkout'; ?>
 					<?php elseif ( !isset($dates[$i - 1]) &&  isset($dates[$i + 1]) && isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i + 1]][0])): ?>
-							<?php $border = 'no-border-right'; ?>
+							<?php $border = 'no-border-right checkin'; ?>
 					<?php elseif ( isset($dates[$i - 1]) &&  !isset($dates[$i + 1]) && isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i - 1]][0])): ?>
-							<?php $border = 'no-border-left'; ?>
+							<?php $border = 'no-border-left checkout'; ?>
 					<?php elseif ( !isset($dates[$i - 1]) &&  isset($dates[$i + 1])): ?>
-							<?php $border = ''; ?>
+							<?php $border = 'checkin checkout'; ?>
 					<?php endif; ?>
 
 					<?php if (isset($room['ReservationDates'][$dates[$i]]) && !empty($room['ReservationDates'][$dates[$i]][0])): ?>
