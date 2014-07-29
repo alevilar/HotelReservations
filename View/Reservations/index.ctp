@@ -27,7 +27,13 @@
 							<?php $border = 'no-border-left'; ?>
 					<?php elseif ( isset($dates[$i - 1]) &&  isset($dates[$i + 1]) && isset($room['ReservationDates'][$dates[$i]][0]) && !isset($room['ReservationDates'][$dates[$i - 1]][0]) && isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i + 1]][0])): ?>
 							<?php $border = 'no-border-right'; ?>
-					<?php elseif ( isset($dates[$i - 1]) &&  isset($dates[$i + 1]) && isset($room['ReservationDates'][$dates[$i]][0]) && !isset($room['ReservationDates'][$dates[$i - 1]][0]) && !isset($room['ReservationDates'][$dates[$i + 1]][0])): ?>
+					<?php elseif ( isset($dates[$i - 1]) &&  isset($dates[$i + 1]) && isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && !isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i + 1]][0])): ?>
+							<?php $border = 'no-border-left'; ?>
+					<?php elseif ( !isset($dates[$i - 1]) &&  isset($dates[$i + 1]) && isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i + 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i + 1]][0])): ?>
+							<?php $border = 'no-border-right'; ?>
+					<?php elseif ( isset($dates[$i - 1]) &&  !isset($dates[$i + 1]) && isset($room['ReservationDates'][$dates[$i]][0]) && isset($room['ReservationDates'][$dates[$i - 1]][0]) && ($room['ReservationDates'][$dates[$i]][0] == $room['ReservationDates'][$dates[$i - 1]][0])): ?>
+							<?php $border = 'no-border-left'; ?>
+					<?php elseif ( !isset($dates[$i - 1]) &&  isset($dates[$i + 1])): ?>
 							<?php $border = ''; ?>
 					<?php endif; ?>
 
