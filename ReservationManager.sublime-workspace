@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"chec",
+				"checkout"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"col",
+				"col-xs-12"
+			],
+			[
+				"th",
+				"th	Tag"
+			],
+			[
+				"is_n",
+				"is_numeric"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"che",
+				"checkout  (variable)"
+			],
+			[
+				"cont",
+				"controller"
+			],
+			[
+				"R",
+				"Reservation"
+			],
+			[
+				"roo",
+				"room"
+			],
+			[
 				"showed_",
 				"showed_width"
 			],
@@ -12,16 +56,8 @@
 				"showed_width"
 			],
 			[
-				"chec",
-				"checkout"
-			],
-			[
 				"date",
 				"datediff"
-			],
-			[
-				"che",
-				"checkin"
 			],
 			[
 				"star",
@@ -71,16 +107,56 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "Controller/ReservationsController.php",
+			"settings":
+			{
+				"buffer_size": 6442,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Model/Reservation.php",
+			"settings":
+			{
+				"buffer_size": 5364,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "View/Reservations/index.ctp",
+			"settings":
+			{
+				"buffer_size": 9956,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "webroot/css/main.css",
+			"settings":
+			{
+				"buffer_size": 602,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "webroot/js/main.js",
+			"settings":
+			{
+				"buffer_size": 114,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 104.0,
+		"height": 81.0,
 		"selected_items":
 		[
 			[
-				"git pull",
-				"Git: Pull"
+				"install",
+				"Package Control: Install Package"
 			],
 			[
 				"tid",
@@ -89,10 +165,6 @@
 			[
 				"tidy",
 				"Tidy PHP"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"install ",
@@ -120,16 +192,25 @@
 	},
 	"file_history":
 	[
-		"/C/AppServ/www/reservaciones/Config/bootstrap.php",
-		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/Config/bootstrap.php",
-		"/C/AppServ/www/reservaciones/View/Layouts/default.ctp",
-		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/webroot/css/main.css",
+		"/home/wuilliam/Proyectos/reservaciones/Plugin/ReservationManager/View/Layouts/default.ctp",
+		"/home/wuilliam/Proyectos/reservaciones/Plugin/ReservationManager/View/Reservations/index.ctp",
+		"/home/wuilliam/Proyectos/reservaciones/Plugin/ReservationManager/View/Reservations/add.ctp",
+		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/Controller/RoomsController.php",
 		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/View/Layouts/default.ctp",
+		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/webroot/css/main.css",
+		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/Model/ReservationManagerAppModel.php",
 		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/View/Reservations/index.ctp",
 		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/Controller/ReservationsController.php",
-		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/Model/ReservationManagerAppModel.php",
-		"/C/AppServ/www/quiniela_admin/trunk/webroot/index.php",
+		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/View/Rooms/state.ctp",
+		"/home/wuilliam/Proyectos/reservaciones/Plugin/ReservationManager/Config/bootstrap.php",
+		"/C/AppServ/www/reservaciones/View/Layouts/default.ctp",
+		"/home/wuilliam/Proyectos/reservaciones/Plugin/ReservationManager/Model/Reservation.php",
+		"/home/wuilliam/Proyectos/reservaciones/Plugin/ReservationManager/Model/ReservationManagerAppModel.php",
+		"/home/wuilliam/Proyectos/reservaciones/Plugin/ReservationManager/webroot/css/main.css",
+		"/home/wuilliam/Proyectos/reservaciones/Plugin/ReservationManager/Controller/ReservationsController.php",
 		"/C/AppServ/www/reservaciones/View/Layouts/ajax.ctp",
+		"/C/AppServ/www/reservaciones/Config/bootstrap.php",
+		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/Config/bootstrap.php",
 		"/C/AppServ/www/reservaciones/Plugin/ReservationManager/Model/Reservation.php",
 		"/C/AppServ/www/reservaciones/Model/Cliente.php",
 		"/C/AppServ/www/reservaciones/Config/database.php",
@@ -156,6 +237,7 @@
 		"/C/AppServ/www/quiniela_admin/trunk/Controller/EquiposController.php",
 		"/C/AppServ/www/quiniela_admin/trunk/Model/Equipo.php",
 		"/C/AppServ/www/quiniela_admin/trunk/index.php",
+		"/C/AppServ/www/quiniela_admin/trunk/webroot/index.php",
 		"/C/AppServ/www/quiniela_admin/quiniela_admin.sublime-project",
 		"/c/users/wuilliam/appdata/local/temp/sublime-svn-1402269188/SVN",
 		"/C/AppServ/www/quiniela_admin/trunk/View/Clientes/edit.ctp",
@@ -187,6 +269,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -194,6 +277,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"margin-",
+			"$this->Paginator->sort(",
+			"setReservationShowedDays",
 			"margin-left: ",
 			".days_",
 			"% }",
@@ -212,6 +298,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
 			"width: ",
 			"witdh: ",
 			".width_",
@@ -231,8 +318,454 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Controller/ReservationsController.php",
+					"settings":
+					{
+						"buffer_size": 6442,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2891,
+								2891
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 655.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Model/Reservation.php",
+					"settings":
+					{
+						"buffer_size": 5364,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5252,
+								5252
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2385.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "View/Reservations/index.ctp",
+					"settings":
+					{
+						"buffer_size": 9956,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1339,
+								1339
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/CakePHP (tmbundle)/Syntaxes/(HTML) CakePHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "webroot/css/main.css",
+					"settings":
+					{
+						"buffer_size": 602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								417,
+								417
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "webroot/js/main.js",
+					"settings":
+					{
+						"buffer_size": 114,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								111,
+								111
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -267,10 +800,6 @@
 		]
 	},
 	"menu_visible": true,
-	"output.git":
-	{
-		"height": 100.0
-	},
 	"replace":
 	{
 		"height": 62.0
@@ -281,6 +810,66 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"main.j",
+				"webroot/js/main.js"
+			],
+			[
+				"main.cs",
+				"webroot/css/main.css"
+			],
+			[
+				"inde",
+				"View/Reservations/index.ctp"
+			],
+			[
+				"reserva",
+				"Model/Reservation.php"
+			],
+			[
+				"reservationscontr",
+				"Controller/ReservationsController.php"
+			],
+			[
+				"reservinde",
+				"View/Reservations/index.ctp"
+			],
+			[
+				"layou",
+				"View/Layouts/default.ctp"
+			],
+			[
+				"resadd",
+				"View/Reservations/add.ctp"
+			],
+			[
+				"roomsedit",
+				"View/Rooms/edit.ctp"
+			],
+			[
+				"roomscon",
+				"Controller/RoomsController.php"
+			],
+			[
+				"layde",
+				"View/Layouts/default.ctp"
+			],
+			[
+				"main.css",
+				"webroot/css/main.css"
+			],
+			[
+				"resappmo",
+				"Model/ReservationManagerAppModel.php"
+			],
+			[
+				"reseinde",
+				"View/Reservations/index.ctp"
+			],
+			[
+				"reservacont",
+				"Controller/ReservationsController.php"
+			],
 			[
 				"boot",
 				"Config/bootstrap.php"
@@ -296,10 +885,6 @@
 			[
 				"appmode",
 				"Model/ReservationManagerAppModel.php"
-			],
-			[
-				"reserva",
-				"Model/Reservation.php"
 			],
 			[
 				"reser",

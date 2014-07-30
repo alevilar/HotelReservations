@@ -22,6 +22,9 @@ class ReservationsController extends ReservationManagerAppController {
  * @return void
  */
 	public function index() {
+	}
+
+	public function build_grid() {
 		$col_width = $this->Reservation->getColWidth();
 		$this->layout = 'ReservationManager.default';
 
@@ -60,6 +63,7 @@ class ReservationsController extends ReservationManagerAppController {
 			// print_r($room['ReservationDates']);
 		}
 		// print_r($rooms);
+		$this->layout = false;
 
 		$this->set(compact('rooms', 'dates', 'prev', 'next', 'col_width'));
 	}
