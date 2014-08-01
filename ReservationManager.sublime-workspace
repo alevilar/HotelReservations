@@ -111,7 +111,7 @@
 			"file": "Controller/ReservationsController.php",
 			"settings":
 			{
-				"buffer_size": 6442,
+				"buffer_size": 6503,
 				"line_ending": "Windows"
 			}
 		},
@@ -119,7 +119,7 @@
 			"file": "Model/Reservation.php",
 			"settings":
 			{
-				"buffer_size": 5364,
+				"buffer_size": 4754,
 				"line_ending": "Unix"
 			}
 		},
@@ -127,8 +127,15 @@
 			"file": "View/Reservations/index.ctp",
 			"settings":
 			{
-				"buffer_size": 9956,
+				"buffer_size": 180,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -143,7 +150,23 @@
 			"file": "webroot/js/main.js",
 			"settings":
 			{
-				"buffer_size": 114,
+				"buffer_size": 222,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "View/Elements/Reservations/grid.ctp",
+			"settings":
+			{
+				"buffer_size": 5959,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "View/Reservations/build_grid.ctp",
+			"settings":
+			{
+				"buffer_size": 50,
 				"line_ending": "Unix"
 			}
 		}
@@ -192,6 +215,7 @@
 	},
 	"file_history":
 	[
+		"/home/wuilliam/vainas/proyectos/reservaciones/Plugin/ReservationManager/View/Elements/Reservations/build_class.ctp",
 		"/home/wuilliam/Proyectos/reservaciones/Plugin/ReservationManager/View/Layouts/default.ctp",
 		"/home/wuilliam/Proyectos/reservaciones/Plugin/ReservationManager/View/Reservations/index.ctp",
 		"/home/wuilliam/Proyectos/reservaciones/Plugin/ReservationManager/View/Reservations/add.ctp",
@@ -277,6 +301,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"index",
 			"margin-",
 			"$this->Paginator->sort(",
 			"setReservationShowedDays",
@@ -318,7 +343,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -326,15 +351,15 @@
 					"file": "Controller/ReservationsController.php",
 					"settings":
 					{
-						"buffer_size": 6442,
+						"buffer_size": 6503,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2891,
-								2891
+								2058,
+								2058
 							]
 						],
 						"settings":
@@ -447,7 +472,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 655.0,
+						"translation.y": 385.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -457,15 +482,15 @@
 					"file": "Model/Reservation.php",
 					"settings":
 					{
-						"buffer_size": 5364,
+						"buffer_size": 4754,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5252,
-								5252
+								0,
+								0
 							]
 						],
 						"settings":
@@ -588,15 +613,15 @@
 					"file": "View/Reservations/index.ctp",
 					"settings":
 					{
-						"buffer_size": 9956,
+						"buffer_size": 180,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1339,
-								1339
+								41,
+								41
 							]
 						],
 						"settings":
@@ -709,13 +734,38 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "webroot/css/main.css",
 					"settings":
 					{
@@ -741,24 +791,77 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "webroot/js/main.js",
 					"settings":
 					{
-						"buffer_size": 114,
+						"buffer_size": 222,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								111,
-								111
+								219,
+								219
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "View/Elements/Reservations/grid.ctp",
+					"settings":
+					{
+						"buffer_size": 5959,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3762,
+								3762
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CakePHP (Native)/CakePHP-Template.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 561.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "View/Reservations/build_grid.ctp",
+					"settings":
+					{
+						"buffer_size": 50,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								50,
+								50
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CakePHP (tmbundle)/Syntaxes/(HTML) CakePHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -810,6 +913,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"build",
+				"View/Reservations/build_grid.ctp"
+			],
+			[
+				"grid",
+				"View/Elements/Reservations/grid.ctp"
+			],
 			[
 				"main.j",
 				"webroot/js/main.js"
