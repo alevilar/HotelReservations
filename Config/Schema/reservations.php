@@ -59,6 +59,7 @@ class ReservationsSchema extends CakeSchema {
 		'name' => array('type' => 'string', 'null' => true),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
+		'color' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 40),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1))
 	);
 
