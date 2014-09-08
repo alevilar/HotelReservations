@@ -53,7 +53,7 @@
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Room Id'); ?></th>
-		<th><?php echo __('Cliente Id'); ?></th>
+		<th><?php echo __('%s Id', Configure::read('Mesa.tituloCliente')); ?></th>
 		<th><?php echo __('Observation'); ?></th>
 		<th><?php echo __('Passengers'); ?></th>
 		<th><?php echo __('Checkin'); ?></th>

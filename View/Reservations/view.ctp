@@ -11,7 +11,7 @@
 			<?php echo $this->Html->link($reservation['Room']['name'], array('controller' => 'rooms', 'action' => 'view', $reservation['Room']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Cliente Id'); ?></dt>
+		<dt><?php echo __('%s Id', Configure::read('Mesa.tituloCliente')); ?></dt>
 		<dd>
 			<?php echo h($reservation['Reservation']['cliente_id']); ?>
 			&nbsp;

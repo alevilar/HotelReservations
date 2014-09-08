@@ -13,11 +13,13 @@
 
 		if ($cliente_id) {
 			echo $this->Form->input('cliente_id', array('type' => 'hidden', 'value' => $cliente_id));
-			echo "<label>Cliente</label>: ";
+			?>
+			<label><?php echo Configure::read('Mesa.tituloCliente') ?></label>: 
+			<?php
 			echo "<strong>" . $cliente['Cliente']['nombre'] . "</strong> <br />";
-			echo $this->Html->link('Change client', array('action' => 'select_client'));
+			echo $this->Html->link(__('Cambiar %s', Configure::read('Mesa.tituloCliente') ), array('action' => 'select_client'));
 		} else {
-			echo $this->Html->link('Select client', array('action' => 'select_client'));
+			echo $this->Html->link(__('Seleccionar %s', Configure::read('Mesa.tituloCliente'), array('action' => 'select_client'));
 			echo $this->Form->input('cliente_id');
 		}
 		echo $this->Form->input('observation');

@@ -88,7 +88,7 @@ class Reservation extends ReservationManagerAppModel {
 			'order' => ''
 		),
 		'Cliente' => array(
-			'className' => 'Cliente',
+			'className' => 'Fidelization.Cliente',
 			'foreignKey' => 'cliente_id',
 			'conditions' => '',
 			'fields' => '',
