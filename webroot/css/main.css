@@ -4,7 +4,8 @@ div.dates-range .btn { border-radius: 0;}
  div.dates-range a, div.dates-range div {position: relative; float: left}
 .reservation-item button, div.dates-range a { margin: 0; padding: 0}
 .radio label { display: block;}
-.table>thead>tr>th, .table>body>tr>td { vertical-align: middle; text-align: }
+.table>thead>tr>th, .table>body>tr>td { vertical-align: middle; text-align: center; font-size: 9pt; margin: 0; padding: 0 }
+.table-bordered>tbody>tr>td {  vertical-align: middle; text-align: center; }
 .table-bordered>tbody>tr>td.active { background-image: -webkit-linear-gradient(top,#d9534f 0,#c12e2a 100%);background-image: linear-gradient(to bottom,#d9534f 0,#c12e2a 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc12e2a', GradientType=0);filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);background-repeat: repeat-x;border-color: #b92c28; border: 1px solid #000; padding: 0px; }
 .table-bordered>tbody>tr>td.active a {text-decoration: none; padding: 8px; }
 .table-bordered>tbody>tr>td.no-border-right { border-right: none; }
