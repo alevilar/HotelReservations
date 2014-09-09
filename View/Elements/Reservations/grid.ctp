@@ -46,7 +46,7 @@
 							<td style="width: <?php echo $col_width; ?>%">&nbsp;</td>
 					<?php endif; ?>
 				<?php endfor; ?>
-				<td style="width: <?php echo $col_width; ?>" class="<?php echo $room['RoomState']['color']; ?>">
+				<td style="width: <?php echo $col_width; ?>%" class="<?php echo ($room['RoomState']['color']) ? $room['RoomState']['color'] : 'btn-success'; ?>">
 					<?php echo $this->Html->link($room['Room']['name'], array('controller' => 'rooms', 'action' => 'state', $room['Room']['id']), array('style' => 'color:#fff;width:' . $col_width . '%', 'data-toggle' => 'modal', 'data-target' => '.bs-example-modal-lg')); ?>
 				</td>
 			</tr>
