@@ -1,3 +1,4 @@
+<div class="modal-content">
 <div class="rooms form">
 <?php echo $this->Form->create('Room'); ?>
 	<fieldset>
@@ -9,4 +10,5 @@
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Change state')); ?>
+</div>
 </div>
