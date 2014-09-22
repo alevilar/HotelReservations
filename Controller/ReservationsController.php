@@ -16,6 +16,9 @@ class ReservationsController extends ReservationManagerAppController {
  */
 	public $components = array('Paginator', 'Session');
 
+
+	public $uses = array('Mesa.Mesa');
+
 /**
  * index method
  *
@@ -25,7 +28,6 @@ class ReservationsController extends ReservationManagerAppController {
 	}
 
 	public function build_grid() {
-		$col_width = $this->Reservation->getColWidth();
 		$this->layout = 'ReservationManager.default';
 
 		// Getting the current date or selected one
@@ -35,37 +37,37 @@ class ReservationsController extends ReservationManagerAppController {
 		}
 
 		// Get the left date and right date from selected one
-		list($left, $right)  = $this->Reservation->getLeftAndRightRangeDates($date);
+		list($left, $right)  = $this->Mesa->getLeftAndRightRangeDates($date);
 
 		// Get the prev date and next date from selected one
-		list($prev, $next) = $this->Reservation->getPrevAndNextDates($date);
+		list($prev, $next) = $this->Mesa->getPrevAndNextDates($date);
 
 		// Get all dates bewteen range given
-		$dates = $this->Reservation->getRangeDates($left, $right);
+		$dates = $this->Mesa->getRangeDates($left, $right);
 		// print_r($dates);
 
-		// Getting all rooms
-		$this->Reservation->Room->recursive = 0;
-		$rooms = $this->Reservation->Room->find('all');
-		// print_r($rooms);die;
-		foreach ($rooms as &$room) {
+		// Getting all nombre_mesas
+		$this->Mesa->NombreMesa->recursive = 0;
+		$nombre_mesas = $this->Mesa->NombreMesa->find('all');
+		// print_r($nombre_mesas);die;
+		foreach ($nombre_mesas as &$room) {
 			$room_reservation_dates = array();
-			$room['Reservation'] = $this->Reservation->getReservationsForRoom($room['Room']['id'], $left, $right);
+			$room['Reservation'] = $this->Mesa->getReservationsForRoom($room['Room']['id'], $left, $right);
 		
 			foreach ($room['Reservation'] as &$reservation) {
 				foreach ($dates as $date) {
-					// $room_reservation_dates[$date][] = ($this->Reservation->hasRoomReservationInDate($room, $date)) ? $reservation['Reservation']['id'] : false;
-					$room_reservation_dates[$date] = $this->Reservation->getReservationsForRoomInDate($room, $date);
+					// $room_reservation_dates[$date][] = ($this->Mesa->hasRoomReservationInDate($room, $date)) ? $reservation['Reservation']['id'] : false;
+					$room_reservation_dates[$date] = $this->Mesa->getReservationsForRoomInDate($room, $date);
 				}
 				$room['ReservationDates'] = $room_reservation_dates;
-				$this->Reservation->setReservationShowedDays($reservation, $left, $right);
+				$this->Mesa->setReservationShowedDays($reservation, $left, $right);
 			}
 			// print_r($room['ReservationDates']);
 		}
-		// print_r($rooms);
+		// print_r($nombre_mesas);
 		$this->layout = false;
 
-		$this->set(compact('rooms', 'dates', 'prev', 'next', 'col_width'));
+		$this->set(compact('nombre_mesas', 'dates', 'prev', 'next'));
 	}
 
 /**
@@ -76,11 +78,11 @@ class ReservationsController extends ReservationManagerAppController {
  * @return void
  */
 	public function view($id = null) {
-		if (!$this->Reservation->exists($id)) {
+		if (!$this->Mesa->exists($id)) {
 			throw new NotFoundException(__('Invalid reservation'));
 		}
-		$options = array('conditions' => array('Reservation.' . $this->Reservation->primaryKey => $id));
-		$this->set('reservation', $this->Reservation->find('first', $options));
+		$options = array('conditions' => array('Reservation.' . $this->Mesa->primaryKey => $id));
+		$this->set('reservation', $this->Mesa->find('first', $options));
 	}
 
 /**
@@ -90,9 +92,9 @@ class ReservationsController extends ReservationManagerAppController {
  */
 	public function add($cliente_id = null, $checkin = null, $room_id = null) {
 		if ($this->request->is('post')) {
-			$this->Reservation->create();
-			if ($this->Reservation->save($this->request->data)) {
-				$this->Reservation->changeRoomStateIfTodayInPeriod(
+			$this->Mesa->create();
+			if ($this->Mesa->save($this->request->data)) {
+				$this->Mesa->changenombre_mesastateIfTodayInPeriod(
 					$this->request->data['Reservation']['room_id'],
 					$this->request->data['Reservation']['checkin'],
 					$this->request->data['Reservation']['checkout']);
@@ -104,14 +106,14 @@ class ReservationsController extends ReservationManagerAppController {
 		}
 		$this->layout = 'ajax';
 		if ($cliente_id) {
-			$cliente = $this->Reservation->Cliente->findById($cliente_id);
+			$cliente = $this->Mesa->Cliente->findById($cliente_id);
 		}
 		if ($room_id) {
-			$room = $this->Reservation->Room->findById($room_id);
+			$room = $this->Mesa->NombreMesa->findById($room_id);
 		}
-		$rooms = $this->Reservation->Room->find('list');
-		$clientes = $this->Reservation->Cliente->find('list');
-		$this->set(compact('cliente_id', 'room_id', 'checkin', 'rooms', 'clientes', 'cliente', 'room'));
+		$nombre_mesas = $this->Mesa->NombreMesa->find('list');
+		$clientes = $this->Mesa->Cliente->find('list');
+		$this->set(compact('cliente_id', 'room_id', 'checkin', 'nombre_mesas', 'clientes', 'cliente', 'room'));
 	}
 
 /**
@@ -122,12 +124,12 @@ class ReservationsController extends ReservationManagerAppController {
  * @return void
  */
 	public function edit($id = null) {
-		if (!$this->Reservation->exists($id)) {
+		if (!$this->Mesa->exists($id)) {
 			throw new NotFoundException(__('Invalid reservation'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Reservation->save($this->request->data)) {
-				$this->Reservation->changeRoomStateIfTodayInPeriod(
+			if ($this->Mesa->save($this->request->data)) {
+				$this->Mesa->changenombre_mesastateIfTodayInPeriod(
 					$this->request->data['Reservation']['room_id'],
 					$this->request->data['Reservation']['checkin'],
 					$this->request->data['Reservation']['checkout']);
@@ -137,13 +139,13 @@ class ReservationsController extends ReservationManagerAppController {
 				$this->Session->setFlash(__('The reservation could not be saved. Please, try again.'));
 			}
 		} else {
-			$options = array('conditions' => array('Reservation.' . $this->Reservation->primaryKey => $id));
-			$this->request->data = $this->Reservation->find('first', $options);
+			$options = array('conditions' => array('Reservation.' . $this->Mesa->primaryKey => $id));
+			$this->request->data = $this->Mesa->find('first', $options);
 		}
 		$this->layout = 'ajax';
-		$clientes = $this->Reservation->Cliente->find('list');
-		$rooms = $this->Reservation->Room->find('list');
-		$this->set(compact('rooms', 'clientes'));
+		$clientes = $this->Mesa->Cliente->find('list');
+		$nombre_mesas = $this->Mesa->NombreMesa->find('list');
+		$this->set(compact('nombre_mesas', 'clientes'));
 	}
 
 /**
@@ -154,7 +156,7 @@ class ReservationsController extends ReservationManagerAppController {
  * @return void
  */
 	public function select_client() {
-		$clientes = $this->Reservation->Cliente->find('all');
+		$clientes = $this->Mesa->Cliente->find('all');
 		$this->set(compact('clientes'));
 	}
 
@@ -169,15 +171,15 @@ class ReservationsController extends ReservationManagerAppController {
  * @return void
  */
 	public function checkout($id = null) {
-		if (!$this->Reservation->exists($id)) {
+		if (!$this->Mesa->exists($id)) {
 			throw new NotFoundException(__('Invalid reservation'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
-			$reservation = $this->Reservation->findById($id);
+			$reservation = $this->Mesa->findById($id);
 			$reservation['Reservation']['checkout'] = date('Y-m-d H:i:s');
-			if ($this->Reservation->save($reservation)) {
+			if ($this->Mesa->save($reservation)) {
 				$reservation['Room']['room_state_id'] = 3; // En limpieza
-				$this->Reservation->Room->save($reservation['Room']);
+				$this->Mesa->NombreMesa->save($reservation['Room']);
 				$this->Session->setFlash(__('The reservation has been checked out.'));
 			} else {
 				$this->Session->setFlash(__('The reservation could not be checked out. Please, try again.'));
@@ -195,12 +197,12 @@ class ReservationsController extends ReservationManagerAppController {
  * @return void
  */
 	public function delete($id = null) {
-		$this->Reservation->id = $id;
-		if (!$this->Reservation->exists()) {
+		$this->Mesa->id = $id;
+		if (!$this->Mesa->exists()) {
 			throw new NotFoundException(__('Invalid reservation'));
 		}
 		$this->request->allowMethod('post', 'delete');
-		if ($this->Reservation->delete()) {
+		if ($this->Mesa->delete()) {
 			$this->Session->setFlash(__('The reservation has been deleted.'));
 		} else {
 			$this->Session->setFlash(__('The reservation could not be deleted. Please, try again.'));
